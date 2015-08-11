@@ -7,13 +7,13 @@ public class cows_buls
 {
     private static List<PlayerInfo> klasirane =
     new List<PlayerInfo>();
-	private static int count1;
-	private static int count2;
-    
-	
-	
-	
-	private static string numberForGuessString;
+    private static int count1;
+    private static int count2;
+
+
+
+
+    private static string numberForGuessString;
     private static bool isGuessed;
     private static char[] helpingNumber;
     private static Random randomGenerator;
@@ -40,11 +40,8 @@ public class cows_buls
             {
                 ProcessDigitCommand(command);
             }
-            else	
+            else
             {
-
-
-
                 ProcessTextCommand(command);
             }
         }
@@ -227,7 +224,8 @@ public class cows_buls
         bool flag = false;
         int c = 0;
         while (!flag &&
-               c != 2 * numberForGuessString.Length){
+               c != 2 * numberForGuessString.Length)
+        {
             int digitForReveal = randomGenerator.Next(0, 4);
             if (helpingNumber[digitForReveal] == 'X')
             {
