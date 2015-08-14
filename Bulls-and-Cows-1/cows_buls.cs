@@ -4,8 +4,7 @@ using System.Text;
 
 public class cows_buls
 {
-    private static List<PlayerInfo> klasirane =
-    new List<PlayerInfo>();
+    private static List<PlayerInfo> klasirane = new List<PlayerInfo>();
     private static int count1;
     private static int count2;
     private static string numberForGuessString;
@@ -71,6 +70,7 @@ public class cows_buls
         {
             sb.Append("0");
         }
+
         sb.Append(numberForGuessString);
         numberForGuessString = sb.ToString();
     }
@@ -129,6 +129,7 @@ public class cows_buls
                     tryNumberString, cowsCount, bulls, i);
             }
         }
+
         return cowsCount;
     }
 
@@ -143,6 +144,7 @@ public class cows_buls
                 bulls[i] = true;
             }
         }
+
         return bullsCount;
     }
 
@@ -159,6 +161,7 @@ public class cows_buls
                 }
             }
         }
+
         return cowsCount;
     }
 
@@ -179,6 +182,7 @@ public class cows_buls
                 " attempts and {1} cheats.",
                 count2, count1);
         }
+
         Console.WriteLine();
     }
 
@@ -221,14 +225,17 @@ public class cows_buls
                c != 2 * numberForGuessString.Length)
         {
             int digitForReveal = randomGenerator.Next(0, 4);
+
             if (helpingNumber[digitForReveal] == 'X')
             {
                 helpingNumber[digitForReveal] =
                 numberForGuessString[digitForReveal];
                 flag = true;
             }
+
             c++;
         }
+
         PrintHelpingNumber();
     }
 
@@ -295,6 +302,7 @@ public class cows_buls
             int currentPosition = 1;
             Console.WriteLine("  {0,7} | {1}", "Guesses", "Name");
             PrintLine(40);
+
             foreach (var currentPlayerInfo in klasirane)
             {
                 Console.WriteLine("{0}| {1}",
@@ -302,6 +310,7 @@ public class cows_buls
                 PrintLine(40);
                 currentPosition++;
             }
+
             Console.WriteLine();
         }
         else

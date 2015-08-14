@@ -10,6 +10,7 @@ public class PlayerInfo : IComparable<PlayerInfo>
         {
             return nickName;
         }
+
         set
         {
             if (nickName == String.Empty)

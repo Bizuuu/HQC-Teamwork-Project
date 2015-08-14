@@ -5,4 +5,3 @@
 		cows_buls.Play();
     }
 }
-
