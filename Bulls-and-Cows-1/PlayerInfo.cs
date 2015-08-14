@@ -8,8 +8,6 @@ public class PlayerInfo : IComparable<PlayerInfo>
     {
         get
         {
-
-
             return nickName;
         }
         set
