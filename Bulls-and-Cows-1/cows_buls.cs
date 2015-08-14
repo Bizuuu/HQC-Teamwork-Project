@@ -131,6 +131,7 @@ public class cows_buls
         }
         return cowsCount;
     }
+
     private static int CountBulls(
         string tryNumberString, int bullsCount, bool[] bulls)
     {
@@ -144,6 +145,7 @@ public class cows_buls
         }
         return bullsCount;
     }
+
     private static int CountCowsForCurrentDigit(
         string tryNumberString, int cowsCount, bool[] bulls, int i)
     {
@@ -159,6 +161,7 @@ public class cows_buls
         }
         return cowsCount;
     }
+
     private static void PrintCongratulationMessage()
     {
         if (count1 == 0)
@@ -178,6 +181,7 @@ public class cows_buls
         }
         Console.WriteLine();
     }
+
     private static bool isEqualToNumberForGuess(string tryNumber)
     {
         bool isEqualToNumberForGuess =
@@ -208,6 +212,7 @@ public class cows_buls
                 break;
         }
     }
+
     private static void RevealDigit()
     {
         bool flag = false;
