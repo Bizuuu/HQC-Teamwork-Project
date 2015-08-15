@@ -102,8 +102,7 @@ public class cows_buls
         int cowsCount = 0;
         CountBullsAndCows(
             tryNumberString, ref bullsCount, ref cowsCount);
-        Console.WriteLine("Wrong number! Bulls: {0}, Cows: {1}!",
-                          bullsCount, cowsCount);
+        Console.WriteLine("Wrong number! Bulls: {0}, Cows: {1}!", bullsCount, cowsCount);
     }
 
     private static void CountBullsAndCows(
@@ -176,11 +175,7 @@ public class cows_buls
         }
         else
         {
-            Console.WriteLine(
-                "Congratulations! You guessed the" +
-                " secret number in {0}" +
-                " attempts and {1} cheats.",
-                count2, count1);
+            Console.WriteLine("Congratulations! You guessed the" + " secret number in {0}" + " attempts and {1} cheats.", count2, count1);
         }
 
         Console.WriteLine();
@@ -188,8 +183,7 @@ public class cows_buls
 
     private static bool isEqualToNumberForGuess(string tryNumber)
     {
-        bool isEqualToNumberForGuess =
-        (tryNumber == numberForGuessString);
+        bool isEqualToNumberForGuess = tryNumber == numberForGuessString;
         return isEqualToNumberForGuess;
     }
 
@@ -242,7 +236,12 @@ public class cows_buls
     private static void PrintHelpingNumber()
     {
         Console.Write("The number looks like ");
-        foreach (char ch in helpingNumber) { Console.Write(ch); }
+
+        foreach (char ch in helpingNumber)
+        {
+            Console.Write(ch); 
+        }
+
         Console.Write(".");
         Console.WriteLine();
     }
@@ -278,6 +277,7 @@ public class cows_buls
         Console.WriteLine("You can add your nickname to top scores!");
         string playerNick = String.Empty;
         while (playerNick == String.Empty)
+        {
             try
             {
                 Console.Write("Enter your nickname: ");
@@ -290,6 +290,7 @@ public class cows_buls
                 Console.WriteLine(e.Message);
                 continue;
             }
+        }
     }
 
     private static void PrintScoreboard()
@@ -305,8 +306,7 @@ public class cows_buls
 
             foreach (var currentPlayerInfo in klasirane)
             {
-                Console.WriteLine("{0}| {1}",
-                                  currentPosition, currentPlayerInfo);
+                Console.WriteLine("{0}| {1}", currentPosition, currentPlayerInfo);
                 PrintLine(40);
                 currentPosition++;
             }
@@ -325,6 +325,7 @@ public class cows_buls
         {
             Console.Write("-");
         }
+
         Console.WriteLine();
     }
 }
