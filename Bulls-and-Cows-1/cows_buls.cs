@@ -4,7 +4,7 @@ using System.Text;
 
 public class Cows_buls
 {
-    private const byte GuessNumberLength= 4;
+    private const byte GuessNumberLength = 4;
     private static List<PlayerInfo> klasirane = new List<PlayerInfo>();
     private static int count1;
     private static int count2;
@@ -25,7 +25,6 @@ public class Cows_buls
         Initialize();
         GenerateNumberForGuess();
 
-        ushort inputAsNumber;
         string input;
 
         while (!isGuessed)
@@ -33,7 +32,7 @@ public class Cows_buls
             Console.Write("Enter your guess or command: ");
             input = Console.ReadLine();
 
-            if (ushort.TryParse(input, out inputAsNumber))
+            if (isValidNumber(input))
             {
                 ProcessDigitCommand(input);
             }
@@ -82,6 +81,24 @@ public class Cows_buls
     //    sb.Append(guessNumberToString);
     //    guessNumberToString = sb.ToString();
     //}
+
+    private static bool isValidNumber(string input)
+    {
+        if (input.Length != GuessNumberLength)
+        {
+            return false;
+        }
+
+        for (int i = 0; i < GuessNumberLength; i++)
+        {
+            if (!char.IsDigit(input[i]))
+            {
+                return false;
+            }
+        }
+
+        return true;
+    }
 
     private static void ProcessDigitCommand(string tryNumberString)
     {
