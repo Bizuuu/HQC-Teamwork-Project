@@ -197,8 +197,13 @@ public class Cows_buls
 
     private static bool IsEqualToNumberForGuess(string tryNumber)
     {
-        bool isEqualToNumberForGuess = tryNumber == guessNumberToString;
-        return isEqualToNumberForGuess;
+        if (tryNumber == guessNumberToString)
+        {
+            return true;
+        }
+
+        return false;
+
     }
 
     private static void ProcessTextCommand(string command)
