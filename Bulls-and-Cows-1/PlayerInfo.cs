@@ -8,18 +8,18 @@ public class PlayerInfo : IComparable<PlayerInfo>
     {
         get
         {
-            return nickName;
+            return this.nickName;
         }
 
         set
         {
-            if (nickName == String.Empty)
+            if (value == string.Empty)
             {
                 throw new ArgumentException("NickName should have at least 1 symbol!");
             }
             else
             {
-                nickName = value;
+                this.nickName = value;
             }
         }
     }
@@ -46,7 +46,7 @@ public class PlayerInfo : IComparable<PlayerInfo>
 
     public override string ToString()
     {
-        string result = String.Format("{0,3}    | {1}", Guesses, NickName);
+        string result = string.Format("{0,3}    | {1}", this.Guesses, this.NickName);
         return result;
     }
 }

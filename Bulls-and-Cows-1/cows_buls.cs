@@ -275,8 +275,8 @@ public class cows_buls
     private static void AddPlayer(int guesses)
     {
         Console.WriteLine("You can add your nickname to top scores!");
-        string playerNick = String.Empty;
-        while (playerNick == String.Empty)
+        string playerNick = string.Empty;
+        while (playerNick == string.Empty)
         {
             try
             {
