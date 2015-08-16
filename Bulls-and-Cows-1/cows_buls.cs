@@ -100,25 +100,20 @@ public class Cows_buls
         return true;
     }
 
-    private static void ProcessDigitCommand(string tryNumberString)
+    private static void ProcessDigitCommand(string numberAsString)
     {
-        if (tryNumberString.Length == 4) // This check is not needed??
-        {
+
             count2++;
-            if (IsEqualToNumberForGuess(tryNumberString))
+            if (IsEqualToNumberForGuess(numberAsString))
             {
                 isGuessed = true;
                 PrintCongratulationMessage();
             }
             else
             {
-                PrintBullsAndCows(tryNumberString);
+                PrintBullsAndCows(numberAsString);
             }
-        }
-        else
-        {
-            Console.WriteLine("You have entered invalid number!");
-        }
+
     }
 
     private static void PrintBullsAndCows(string tryNumberString)
@@ -131,8 +126,8 @@ public class Cows_buls
 
     private static void CountBullsAndCows(string tryNumberString, ref int bullsCount, ref int cowsCount)
     {
-        bool[] bulls = new bool[4];
-        bool[] cows = new bool[10]; //Why is 10??
+        bool[] bulls = new bool[GuessNumberLength];
+        bool[] cows = new bool[GuessNumberLength];
         bullsCount = CountBulls(tryNumberString, bullsCount, bulls);
         cowsCount = CountCows(tryNumberString, cowsCount, bulls, cows);
     }
