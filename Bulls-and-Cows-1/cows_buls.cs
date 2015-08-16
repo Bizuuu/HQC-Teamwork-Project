@@ -7,8 +7,8 @@ using System.Text;
         private const byte GuessNumberLength = 4;
         private const byte AllDigitsCount = 10;
         private static List<PlayerInfo> klasirane = new List<PlayerInfo>();
-        private static int count1;
-        private static int count2;
+        private static int cheatAttemptCounter;
+        private static int guessAttemptCounter;
         private static string guessNumberToString;
         private static bool isGuessed;
         private static char[] helpingNumber;
@@ -43,7 +43,7 @@ using System.Text;
                 }
             }
 
-            AddPlayerToScoreboard(count2);
+            AddPlayerToScoreboard(guessAttemptCounter);
             PrintScoreboard();
             CreateNewGame();
         }
@@ -51,8 +51,8 @@ using System.Text;
         private static void Initialize()
         {
             randomGenerator = new Random();
-            count2 = 0;
-            count1 = 0;
+            guessAttemptCounter = 0;
+            cheatAttemptCounter = 0;
             isGuessed = false;
             helpingNumber = new char[] { 'X', 'X', 'X', 'X' };
         }
@@ -87,7 +87,7 @@ using System.Text;
         private static void ProcessDigitCommand(string numberAsString)
         {
 
-            count2++;
+            guessAttemptCounter++;
             if (IsEqualToNumberForGuess(numberAsString))
             {
                 isGuessed = true;
@@ -164,16 +164,16 @@ using System.Text;
 
         private static void PrintCongratulationMessage()
         {
-            if (count1 == 0)
+            if (cheatAttemptCounter == 0)
             {
                 Console.WriteLine(
                     "Congratulations! You guessed" +
                     " the secret number in {0} attempts.",
-                    count2);
+                    guessAttemptCounter);
             }
             else
             {
-                Console.WriteLine("Congratulations! You guessed the" + " secret number in {0}" + " attempts and {1} cheats.", count2, count1);
+                Console.WriteLine("Congratulations! You guessed the" + " secret number in {0}" + " attempts and {1} cheats.", guessAttemptCounter, cheatAttemptCounter);
             }
 
             Console.WriteLine();
@@ -199,7 +199,7 @@ using System.Text;
                     break;
                 case "help":
                     RevealDigit();
-                    count1++;
+                    cheatAttemptCounter++;
                     break;
                 case "restart":
                     CreateNewGame();
@@ -256,7 +256,7 @@ using System.Text;
 
         private static void AddPlayerToScoreboard(int guesses)
         {
-            if (count1 > 0)
+            if (cheatAttemptCounter > 0)
             {
                 Console.WriteLine(
                     "You are not allowed to enter the top scoreboard.");
