@@ -25,21 +25,21 @@ public class Cows_buls
         Initialize();
         GenerateNumberForGuess();
 
-        long commandDigit;
-        string command;
+        ushort inputAsNumber;
+        string input;
 
         while (!isGuessed)
         {
             Console.Write("Enter your guess or command: ");
-            command = Console.ReadLine();
+            input = Console.ReadLine();
 
-            if (long.TryParse(command, out commandDigit))
+            if (ushort.TryParse(input, out inputAsNumber))
             {
-                ProcessDigitCommand(command);
+                ProcessDigitCommand(input);
             }
             else
             {
-                ProcessTextCommand(command);
+                ProcessTextCommand(input);
             }
         }
 
