@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-public class cows_buls
+public class Cows_buls
 {
     private static List<PlayerInfo> klasirane = new List<PlayerInfo>();
     private static int count1;
@@ -80,7 +80,7 @@ public class cows_buls
         if (tryNumberString.Length == 4)
         {
             count2++;
-            if (isEqualToNumberForGuess(tryNumberString))
+            if (IsEqualToNumberForGuess(tryNumberString))
             {
                 isGuessed = true;
                 PrintCongratulationMessage();
@@ -181,7 +181,7 @@ public class cows_buls
         Console.WriteLine();
     }
 
-    private static bool isEqualToNumberForGuess(string tryNumber)
+    private static bool IsEqualToNumberForGuess(string tryNumber)
     {
         bool isEqualToNumberForGuess = tryNumber == numberForGuessString;
         return isEqualToNumberForGuess;

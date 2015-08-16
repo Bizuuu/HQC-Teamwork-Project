@@ -2,6 +2,6 @@
 {
     private static void Main(string[] args)
     {
-        cows_buls.Play();
+        Cows_buls.Play();
     }
 }
