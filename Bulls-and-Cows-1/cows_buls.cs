@@ -59,29 +59,29 @@ public class Cows_buls
 
     private static void GenerateNumberForGuess()
     {
-        int guessNumber = randomGenerator.Next(0, 9999);
+        int guessNumber = randomGenerator.Next(1000, 10000);
         guessNumberToString = guessNumber.ToString();
 
-        if (guessNumberToString.Length < GuessNumberLength)
-        {
-            AddZeroes();
-        }
+        //if (guessNumberToString.Length < GuessNumberLength)
+        //{
+        //    AddZeroes();
+        //}
 
     }
 
-    private static void AddZeroes()
-    {
-        int zeroesForAdd = GuessNumberLength - guessNumberToString.Length;
-        StringBuilder sb = new StringBuilder();
+    //private static void AddZeroes()
+    //{
+    //    int zeroesForAdd = GuessNumberLength - guessNumberToString.Length;
+    //    StringBuilder sb = new StringBuilder();
 
-        for (int i = 0; i < zeroesForAdd; i++)
-        {
-            sb.Append("0");
-        }
+    //    for (int i = 0; i < zeroesForAdd; i++)
+    //    {
+    //        sb.Append("0");
+    //    }
 
-        sb.Append(guessNumberToString);
-        guessNumberToString = sb.ToString();
-    }
+    //    sb.Append(guessNumberToString);
+    //    guessNumberToString = sb.ToString();
+    //}
 
     private static void ProcessDigitCommand(string tryNumberString)
     {
