@@ -4,6 +4,12 @@ public class PlayerInfo : IComparable<PlayerInfo>
 {
     private string nickName;
 
+    public PlayerInfo(string nickName, int guesses)
+    {
+        this.NickName = nickName;
+        this.Guesses = guesses;
+    }
+
     public string NickName
     {
         get
@@ -25,12 +31,6 @@ public class PlayerInfo : IComparable<PlayerInfo>
     }
 
     public int Guesses { get; set; }
-
-    public PlayerInfo(string nickName, int guesses)
-    {
-        this.NickName = nickName;
-        this.Guesses = guesses;
-    }
 
     public int CompareTo(PlayerInfo other)
     {
