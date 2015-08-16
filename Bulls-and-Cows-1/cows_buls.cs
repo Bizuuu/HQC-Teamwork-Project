@@ -4,10 +4,11 @@ using System.Text;
 
 public class Cows_buls
 {
+    private const byte GuessNumberLength= 4;
     private static List<PlayerInfo> klasirane = new List<PlayerInfo>();
     private static int count1;
     private static int count2;
-    private static string numberForGuessString;
+    private static string guessNumberToString;
     private static bool isGuessed;
     private static char[] helpingNumber;
     private static Random randomGenerator;
@@ -20,16 +21,18 @@ public class Cows_buls
             "Use 'top' to view the top scoreboard, 'restart'" +
             "to start a new game and 'help'" +
             " to cheat and 'exit' to quit the game.");
+
         Initialize();
         GenerateNumberForGuess();
 
-        long commandDigit = 0;
+        long commandDigit;
         string command;
 
         while (!isGuessed)
         {
             Console.Write("Enter your guess or command: ");
             command = Console.ReadLine();
+
             if (long.TryParse(command, out commandDigit))
             {
                 ProcessDigitCommand(command);
@@ -56,14 +59,19 @@ public class Cows_buls
 
     private static void GenerateNumberForGuess()
     {
-        long numberForGuess = randomGenerator.Next(0, 9999);
-        numberForGuessString = numberForGuess.ToString();
-        AddZeroes();
+        int guessNumber = randomGenerator.Next(0, 9999);
+        guessNumberToString = guessNumber.ToString();
+
+        if (guessNumberToString.Length < GuessNumberLength)
+        {
+            AddZeroes();
+        }
+
     }
 
     private static void AddZeroes()
     {
-        int zeroesForAdd = 4 - numberForGuessString.Length;
+        int zeroesForAdd = GuessNumberLength - guessNumberToString.Length;
         StringBuilder sb = new StringBuilder();
 
         for (int i = 0; i < zeroesForAdd; i++)
@@ -71,13 +79,13 @@ public class Cows_buls
             sb.Append("0");
         }
 
-        sb.Append(numberForGuessString);
-        numberForGuessString = sb.ToString();
+        sb.Append(guessNumberToString);
+        guessNumberToString = sb.ToString();
     }
 
     private static void ProcessDigitCommand(string tryNumberString)
     {
-        if (tryNumberString.Length == 4)
+        if (tryNumberString.Length == 4) // This check is not needed??
         {
             count2++;
             if (IsEqualToNumberForGuess(tryNumberString))
@@ -100,22 +108,19 @@ public class Cows_buls
     {
         int bullsCount = 0;
         int cowsCount = 0;
-        CountBullsAndCows(
-            tryNumberString, ref bullsCount, ref cowsCount);
+        CountBullsAndCows(tryNumberString, ref bullsCount, ref cowsCount);
         Console.WriteLine("Wrong number! Bulls: {0}, Cows: {1}!", bullsCount, cowsCount);
     }
 
-    private static void CountBullsAndCows(
-        string tryNumberString, ref int bullsCount, ref int cowsCount)
+    private static void CountBullsAndCows(string tryNumberString, ref int bullsCount, ref int cowsCount)
     {
         bool[] bulls = new bool[4];
-        bool[] cows = new bool[10];
+        bool[] cows = new bool[10]; //Why is 10??
         bullsCount = CountBulls(tryNumberString, bullsCount, bulls);
         cowsCount = CountCows(tryNumberString, cowsCount, bulls, cows);
     }
 
-    private static int CountCows(
-        string tryNumberString, int cowsCount, bool[] bulls, bool[] cows)
+    private static int CountCows(string tryNumberString, int cowsCount, bool[] bulls, bool[] cows)
     {
         for (int i = 0; i < tryNumberString.Length; i++)
         {
@@ -123,24 +128,21 @@ public class Cows_buls
             if (!bulls[i] && !cows[digitForTry])
             {
                 cows[digitForTry] = true;
-                cowsCount =
-                CountCowsForCurrentDigit(
-                    tryNumberString, cowsCount, bulls, i);
+                cowsCount = CountCowsForCurrentDigit(tryNumberString, cowsCount, bulls, i);
             }
         }
 
         return cowsCount;
     }
 
-    private static int CountBulls(
-        string tryNumberString, int bullsCount, bool[] bulls)
+    private static int CountBulls(string tryNumberString, int bullsCount, bool[] bulls)
     {
         for (int i = 0; i < tryNumberString.Length; i++)
         {
-            if (tryNumberString[i] == numberForGuessString[i])
+            if (tryNumberString[i] == guessNumberToString[i])
             {
-                bullsCount++;
                 bulls[i] = true;
+                bullsCount++;
             }
         }
 
@@ -152,7 +154,7 @@ public class Cows_buls
     {
         for (int j = 0; j < tryNumberString.Length; j++)
         {
-            if (tryNumberString[i] == numberForGuessString[j])
+            if (tryNumberString[i] == guessNumberToString[j])
             {
                 if (!bulls[j])
                 {
@@ -183,7 +185,7 @@ public class Cows_buls
 
     private static bool IsEqualToNumberForGuess(string tryNumber)
     {
-        bool isEqualToNumberForGuess = tryNumber == numberForGuessString;
+        bool isEqualToNumberForGuess = tryNumber == guessNumberToString;
         return isEqualToNumberForGuess;
     }
 
@@ -216,14 +218,14 @@ public class Cows_buls
         bool flag = false;
         int c = 0;
         while (!flag &&
-               c != 2 * numberForGuessString.Length)
+               c != 2 * guessNumberToString.Length)
         {
             int digitForReveal = randomGenerator.Next(0, 4);
 
             if (helpingNumber[digitForReveal] == 'X')
             {
                 helpingNumber[digitForReveal] =
-                numberForGuessString[digitForReveal];
+                guessNumberToString[digitForReveal];
                 flag = true;
             }
 
@@ -239,7 +241,7 @@ public class Cows_buls
 
         foreach (char ch in helpingNumber)
         {
-            Console.Write(ch); 
+            Console.Write(ch);
         }
 
         Console.Write(".");
