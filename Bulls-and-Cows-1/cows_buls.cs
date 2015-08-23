@@ -33,7 +33,7 @@ using System.Text;
                 Console.Write("Enter your guess or command: ");
                 input = Console.ReadLine();
 
-                if (isValidNumber(input))
+                if (IsValidNumber(input))
                 {
                     ProcessDigitCommand(input);
                 }
@@ -59,14 +59,11 @@ using System.Text;
 
         private static void GenerateNumberForGuess()
         {
-            //int guessNumber = 7725;
             int guessNumber = randomGenerator.Next(1000, 10000);
             guessNumberToString = guessNumber.ToString();
-
-
         }
 
-        private static bool isValidNumber(string input)
+        private static bool IsValidNumber(string input)
         {
             if (input.Length != GuessNumberLength)
             {
@@ -86,8 +83,8 @@ using System.Text;
 
         private static void ProcessDigitCommand(string numberAsString)
         {
-
             guessAttemptCounter++;
+
             if (IsEqualToNumberForGuess(numberAsString))
             {
                 isGuessed = true;
@@ -97,7 +94,6 @@ using System.Text;
             {
                 PrintBullsAndCows(numberAsString);
             }
-
         }
 
         private static void PrintBullsAndCows(string tryNumberString)
@@ -187,7 +183,6 @@ using System.Text;
             }
 
             return false;
-
         }
 
         private static void ProcessTextCommand(string command)
