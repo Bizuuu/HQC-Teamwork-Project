@@ -6,7 +6,7 @@ using System.Text;
     {
         private const byte GuessNumberLength = 4;
         private const byte AllDigitsCount = 10;
-        private static List<PlayerInfo> klasirane = new List<PlayerInfo>();
+        private static List<PlayerInfo> leaderBoard = new List<PlayerInfo>();
         private static int cheatAttemptCounter;
         private static int guessAttemptCounter;
         private static string guessNumberToString;
@@ -258,13 +258,13 @@ using System.Text;
             }
             else
             {
-                if (klasirane.Count < 5)
+                if (leaderBoard.Count < 5)
                 {
                     AddPlayer(guesses);
                 }
-                else if (klasirane[4].Guesses > guesses)
+                else if (leaderBoard[4].Guesses > guesses)
                 {
-                    klasirane.RemoveAt(4);
+                    leaderBoard.RemoveAt(4);
                     AddPlayer(guesses);
                 }
             }
@@ -281,7 +281,7 @@ using System.Text;
                     Console.Write("Enter your nickname: ");
                     playerNick = Console.ReadLine();
                     PlayerInfo newPlayer = new PlayerInfo(playerNick, guesses);
-                    klasirane.Add(newPlayer);
+                    leaderBoard.Add(newPlayer);
                 }
                 catch (ArgumentException e)
                 {
@@ -294,15 +294,15 @@ using System.Text;
         private static void PrintScoreboard()
         {
             Console.WriteLine();
-            if (klasirane.Count > 0)
+            if (leaderBoard.Count > 0)
             {
                 Console.WriteLine("Scoreboard:");
-                klasirane.Sort();
+                leaderBoard.Sort();
                 int currentPosition = 1;
                 Console.WriteLine("  {0,7} | {1}", "Guesses", "Name");
                 PrintLine(40);
 
-                foreach (var currentPlayerInfo in klasirane)
+                foreach (var currentPlayerInfo in leaderBoard)
                 {
                     Console.WriteLine("{0}| {1}", currentPosition, currentPlayerInfo);
                     PrintLine(40);
