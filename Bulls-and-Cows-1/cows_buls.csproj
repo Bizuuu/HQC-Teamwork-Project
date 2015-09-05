@@ -42,9 +42,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Contracts\IRandomNumberProvider.cs" />
     <Compile Include="cows_buls.cs" />
     <Compile Include="BullsAndCowsTest.cs" />
     <Compile Include="PlayerScore.cs" />
+    <Compile Include="RandomNumberProvider.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
