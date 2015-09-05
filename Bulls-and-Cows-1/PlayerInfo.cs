@@ -1,10 +1,10 @@
 ﻿using System;
 
-public class PlayerInfo : IComparable<PlayerInfo>
+public class PlayerScore : IComparable<PlayerScore>
 {
     private string nickName;
 
-    public PlayerInfo(string nickName, int guesses)
+    public PlayerScore(string nickName, int guesses)
     {
         this.NickName = nickName;
         this.Guesses = guesses;
@@ -32,7 +32,7 @@ public class PlayerInfo : IComparable<PlayerInfo>
 
     public int Guesses { get; set; }
 
-    public int CompareTo(PlayerInfo other)
+    public int CompareTo(PlayerScore other)
     {
         if (this.Guesses.CompareTo(other.Guesses) == 0)
         {

@@ -6,7 +6,7 @@ using System.Text;
     {
         private const byte GuessNumberLength = 4;
         private const byte AllDigitsCount = 10;
-        private static List<PlayerInfo> leaderBoard = new List<PlayerInfo>();
+        private static List<PlayerScore> leaderBoard = new List<PlayerScore>();
         private static int cheatAttemptCounter;
         private static int guessAttemptCounter;
         private static string guessNumberToString;
@@ -280,7 +280,7 @@ using System.Text;
                 {
                     Console.Write("Enter your nickname: ");
                     playerNick = Console.ReadLine();
-                    PlayerInfo newPlayer = new PlayerInfo(playerNick, guesses);
+                    PlayerScore newPlayer = new PlayerScore(playerNick, guesses);
                     leaderBoard.Add(newPlayer);
                 }
                 catch (ArgumentException e)
