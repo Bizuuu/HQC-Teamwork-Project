@@ -19,7 +19,7 @@ public class PlayerScore : IComparable<PlayerScore>
 
         set
         {
-            if (value == string.Empty)
+            if (string.IsNullOrWhiteSpace(value))
             {
                 throw new ArgumentException("NickName should have at least 1 symbol!");
             }
