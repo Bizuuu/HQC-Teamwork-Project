@@ -6,8 +6,12 @@
     public class RandomNumberProvider : IRandomNumberProvider
     {
         private static RandomNumberProvider randomNumberProvider;
+        private Random random;
 
-        private RandomNumberProvider() { }
+        private RandomNumberProvider()
+        {
+            this.random = new Random();
+        }
 
         public IRandomNumberProvider Instance
         {
@@ -22,9 +26,11 @@
             }
         }
 
-        public int GenerateNumber()
+        public string GenerateNumberAsString()
         {
-            throw new NotImplementedException();
+            int numberToGuess = this.random.Next(1000, 10000);
+            string numberToGuessAsString = numberToGuess.ToString();
+            return numberToGuessAsString;
         }
     }
 }

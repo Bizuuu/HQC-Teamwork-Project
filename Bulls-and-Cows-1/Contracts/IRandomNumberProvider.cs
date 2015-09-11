@@ -4,6 +4,6 @@
     {
         IRandomNumberProvider Instance { get; }
 
-        int GenerateNumber();
+        string GenerateNumberAsString();
     }
 }
