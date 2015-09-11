@@ -16,5 +16,15 @@
             string secondNumber = randomProvider.GenerateNumberAsString();
             Assert.AreNotEqual(firstNumber, secondNumber);
         }
+
+        [TestMethod]
+        public void RandomNumberProviderShouldReturnFourDigitNumberWhenGenerateNumberAsStringIsCalled()
+        {
+            IRandomNumberProvider randomProvider = RandomNumberProvider.Instance;
+            string number = randomProvider.GenerateNumberAsString();
+            int actualNumberOfDigits = number.Length;
+            int expectedNumberOfDigits = 4;
+            Assert.AreEqual(actualNumberOfDigits, expectedNumberOfDigits);
+        }
     }
 }
