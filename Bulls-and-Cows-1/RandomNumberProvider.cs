@@ -13,7 +13,7 @@
             this.random = new Random();
         }
 
-        public IRandomNumberProvider Instance
+        public static IRandomNumberProvider Instance
         {
             get
             {

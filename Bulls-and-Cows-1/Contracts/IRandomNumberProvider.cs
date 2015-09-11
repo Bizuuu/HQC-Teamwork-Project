@@ -2,8 +2,6 @@
 {
     public interface IRandomNumberProvider
     {
-        IRandomNumberProvider Instance { get; }
-
         string GenerateNumberAsString();
     }
 }
