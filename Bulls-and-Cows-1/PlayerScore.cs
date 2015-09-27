@@ -23,7 +23,7 @@
             {
                 if (string.IsNullOrWhiteSpace(value))
                 {
-                    throw new ArgumentException("NickName should have at least 1 symbol!");
+                    throw new ArgumentNullException("NickName should have at least 1 symbol!");
                 }
                 else
                 {
