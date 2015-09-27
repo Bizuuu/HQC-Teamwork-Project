@@ -1,52 +1,55 @@
-﻿using System;
-
-public class PlayerScore : IComparable<PlayerScore>
+﻿namespace BullsAndCows
 {
-    private string nickName;
+    using System;
 
-    public PlayerScore(string nickName, int guesses)
+    public class PlayerScore : IComparable<PlayerScore>
     {
-        this.NickName = nickName;
-        this.Guesses = guesses;
-    }
+        private string nickName;
 
-    public string NickName
-    {
-        get
+        public PlayerScore(string nickName, int guesses)
         {
-            return this.nickName;
+            this.NickName = nickName;
+            this.Guesses = guesses;
         }
 
-        set
+        public string NickName
         {
-            if (string.IsNullOrWhiteSpace(value))
+            get
             {
-                throw new ArgumentException("NickName should have at least 1 symbol!");
+                return this.nickName;
+            }
+
+            set
+            {
+                if (string.IsNullOrWhiteSpace(value))
+                {
+                    throw new ArgumentException("NickName should have at least 1 symbol!");
+                }
+                else
+                {
+                    this.nickName = value;
+                }
+            }
+        }
+
+        public int Guesses { get; set; }
+
+        public int CompareTo(PlayerScore other)
+        {
+            if (this.Guesses.CompareTo(other.Guesses) == 0)
+            {
+                return this.NickName.CompareTo(other.NickName);
             }
             else
             {
-                this.nickName = value;
+                return this.Guesses.CompareTo(other.Guesses);
             }
         }
-    }
 
-    public int Guesses { get; set; }
-
-    public int CompareTo(PlayerScore other)
-    {
-        if (this.Guesses.CompareTo(other.Guesses) == 0)
+        public override string ToString()
         {
-            return this.NickName.CompareTo(other.NickName);
+            string result = string.Format("{0,3}    | {1}", this.Guesses, this.NickName);
+            return result;
         }
-        else
-        {
-            return this.Guesses.CompareTo(other.Guesses);
-        }
-    }
-
-    public override string ToString()
-    {
-        string result = string.Format("{0,3}    | {1}", this.Guesses, this.NickName);
-        return result;
     }
 }

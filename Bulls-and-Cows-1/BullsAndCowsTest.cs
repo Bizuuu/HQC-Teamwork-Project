@@ -1,7 +1,10 @@
-﻿public class BullsAndCowsTest
+﻿namespace BullsAndCows
 {
-    private static void Main(string[] args)
+    public class BullsAndCowsTest
     {
-        Cows_buls.Play();
+        private static void Main(string[] args)
+        {
+            Cows_buls.Play();
+        }
     }
 }

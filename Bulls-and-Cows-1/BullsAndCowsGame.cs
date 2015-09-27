@@ -1,6 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿namespace BullsAndCows
+{
+
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
 
     public class Cows_buls
     {
@@ -327,3 +330,4 @@ using System.Text;
             Console.WriteLine();
         }
     }
+}
