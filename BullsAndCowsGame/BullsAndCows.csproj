@@ -42,6 +42,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CommandProcessors\CommandProcessor.cs" />
+    <Compile Include="CommandProcessors\ExitCommandProcessor.cs" />
+    <Compile Include="CommandProcessors\HelpCommandProcessor.cs" />
+    <Compile Include="CommandProcessors\NumberCommandProcessor.cs" />
+    <Compile Include="CommandProcessors\RestartCommandProcessor.cs" />
+    <Compile Include="CommandProcessors\TopCommandProcessor.cs" />
+    <Compile Include="Contracts\ICommandProcessor.cs" />
     <Compile Include="Contracts\IPrinter.cs" />
     <Compile Include="Contracts\IRandomNumberProvider.cs" />
     <Compile Include="BullsAndCowsGame.cs" />
@@ -50,6 +57,7 @@
     <Compile Include="Printer.cs" />
     <Compile Include="RandomNumberProvider.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
