@@ -7,18 +7,9 @@ namespace BullsAndCows
 {
     public class Message
     {
-        private int bullsCount;
-        private int cowsCount;
-
         public Message()
         {
 
-        }
-
-        public Message(int bullsCount, int cowsCount)
-        {
-            this.BullsCount = bullsCount;
-            this.CowsCount = cowsCount;
         }
 
         public string Welcome
@@ -42,38 +33,6 @@ namespace BullsAndCows
             get
             {
                 return "Enter your guess or command: ";
-            }
-        }
-
-        public string WrongNumber
-        {
-            get
-            {
-                return string.Format("Wrong number! Bulls: {0}, Cows: {1}!", this.BullsCount, this.CowsCount);
-            }
-        }
-        // TODO : VALIDATION
-        public int BullsCount
-        {
-            get
-            {
-                return this.bullsCount;
-            }
-            set
-            {
-                this.bullsCount = value;
-            }
-        }
-
-        public int CowsCount
-        {
-            get
-            {
-                return this.cowsCount;
-            }
-            set
-            {
-                this.cowsCount = value;
             }
         }
     }

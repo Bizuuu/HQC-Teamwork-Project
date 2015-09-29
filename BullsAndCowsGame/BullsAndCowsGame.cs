@@ -100,9 +100,12 @@
         {
             int bullsCount = 0;
             int cowsCount = 0;
+            var printer = new Printer();
+
             CountBullsAndCows(tryNumberString, ref bullsCount, ref cowsCount);
             
-            Console.WriteLine("Wrong number! Bulls: {0}, Cows: {1}!", bullsCount, cowsCount);
+            printer.Print(MessageType.WrongNumber,bullsCount,cowsCount)
+           //Console.WriteLine("Wrong number! Bulls: {0}, Cows: {1}!", bullsCount, cowsCount);
         }
 
         private static void CountBullsAndCows(string tryNumberString, ref int bullsCount, ref int cowsCount)
@@ -161,16 +164,19 @@
 
         private static void PrintCongratulationMessage()
         {
+            var printer = new Printer();
             if (cheatAttemptCounter == 0)
             {
-                Console.WriteLine(
-                    "Congratulations! You guessed" +
-                    " the secret number in {0} attempts.",
-                    guessAttemptCounter);
+                printer.Print(MessageType.Congratulation, guessAttemptCounter);
+                //Console.WriteLine(
+                //    "Congratulations! You guessed" +
+                //    " the secret number in {0} attempts.",
+                //    guessAttemptCounter);
             }
             else
             {
-                Console.WriteLine("Congratulations! You guessed the" + " secret number in {0}" + " attempts and {1} cheats.", guessAttemptCounter, cheatAttemptCounter);
+                printer.Print(MessageType.CheatCongratulation, guessAttemptCounter, cheatAttemptCounter);
+                //Console.WriteLine("Congratulations! You guessed the" + " secret number in {0}" + " attempts and {1} cheats.", guessAttemptCounter, cheatAttemptCounter);
             }
 
             Console.WriteLine();

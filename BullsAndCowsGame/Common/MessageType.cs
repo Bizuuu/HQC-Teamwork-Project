@@ -10,7 +10,9 @@ namespace BullsAndCows.Common
         Welcome,
         GameRules,
         Command,
-        WrongNumber
+        WrongNumber,
+        Congratulation,
+        CheatCongratulation
 
     }
 }
