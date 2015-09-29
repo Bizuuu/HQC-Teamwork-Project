@@ -58,6 +58,7 @@
     <Compile Include="PlayerScore.cs" />
     <Compile Include="Printer.cs" />
     <Compile Include="RandomNumberProvider.cs" />
+    <Compile Include="ScoreBoard.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

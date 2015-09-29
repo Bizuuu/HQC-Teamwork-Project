@@ -1,4 +1,5 @@
 ﻿using BullsAndCows.Common;
+
 namespace BullsAndCows.Contracts
 {
     public interface IPrinter

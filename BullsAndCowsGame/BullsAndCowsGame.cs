@@ -252,7 +252,7 @@
 
         private static void AddPlayerToScoreboard(int guesses)
         {
-            if (cheatAttemptCounter > 0)
+            if (false)
             {
                 Console.WriteLine(
                     "You are not allowed to enter the top scoreboard.");
