@@ -26,5 +26,15 @@
                     throw new ArgumentNullException("No message type.");
             }
         }
+
+        public void Print(string message)
+        {
+            Console.WriteLine(message);
+        }
+
+        public void PrintScoreBoard(ScoreBoard scoreBoard)
+        {
+
+        }
     }
 }

@@ -7,19 +7,28 @@
 
     public class Cows_buls
     {
+        private static int maxPlayersInScoreBoard = 5;
         private const byte GuessNumberLength = 4;
         private const byte AllDigitsCount = 10;
-        private static List<PlayerScore> leaderBoard = new List<PlayerScore>();
+        private static ScoreBoard scoreBoard = new ScoreBoard(maxPlayersInScoreBoard);
         private static int cheatAttemptCounter;
         private static int guessAttemptCounter;
         private static string guessNumberToString;
         private static bool isGuessed;
         private static char[] helpingNumber;
         private static Random randomGenerator;
+        private static string name;
 
         public static void Play()
         {
             var printer = new Printer();
+
+            if(name == null)
+            {
+                printer.Print("Please enter your name: ");
+                name = Console.ReadLine();
+            }
+
             printer.Print(MessageType.Welcome);
             printer.Print(MessageType.GameRules);
 
@@ -43,7 +52,7 @@
                 }
             }
 
-            AddPlayerToScoreboard(guessAttemptCounter);
+            scoreBoard.AddPlayerScore(new PlayerScore(name, guessAttemptCounter));
             PrintScoreboard();
             CreateNewGame();
         }
@@ -250,60 +259,17 @@
             Play();
         }
 
-        private static void AddPlayerToScoreboard(int guesses)
-        {
-            if (false)
-            {
-                Console.WriteLine(
-                    "You are not allowed to enter the top scoreboard.");
-            }
-            else
-            {
-                if (leaderBoard.Count < 5)
-                {
-                    AddPlayer(guesses);
-                }
-                else if (leaderBoard[4].Guesses > guesses)
-                {
-                    leaderBoard.RemoveAt(4);
-                    AddPlayer(guesses);
-                }
-            }
-        }
-
-        private static void AddPlayer(int guesses)
-        {
-            Console.WriteLine("You can add your nickname to top scores!");
-            string playerNick = string.Empty;
-            while (playerNick == string.Empty)
-            {
-                try
-                {
-                    Console.Write("Enter your nickname: ");
-                    playerNick = Console.ReadLine();
-                    PlayerScore newPlayer = new PlayerScore(playerNick, guesses);
-                    leaderBoard.Add(newPlayer);
-                }
-                catch (ArgumentException e)
-                {
-                    Console.WriteLine(e.Message);
-                    continue;
-                }
-            }
-        }
-
         private static void PrintScoreboard()
         {
             Console.WriteLine();
-            if (leaderBoard.Count > 0)
+            if (scoreBoard.LeaderBoard.Count > 0)
             {
                 Console.WriteLine("Scoreboard:");
-                leaderBoard.Sort();
                 int currentPosition = 1;
                 Console.WriteLine("  {0,7} | {1}", "Guesses", "Name");
                 PrintLine(40);
 
-                foreach (var currentPlayerInfo in leaderBoard)
+                foreach (var currentPlayerInfo in scoreBoard.LeaderBoard)
                 {
                     Console.WriteLine("{0}| {1}", currentPosition, currentPlayerInfo);
                     PrintLine(40);

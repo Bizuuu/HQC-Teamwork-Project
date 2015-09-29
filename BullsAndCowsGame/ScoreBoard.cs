@@ -1,17 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace BullsAndCows
 {
     public class ScoreBoard
     {
-        private IList<PlayerScore> leaderBoard;
+        private List<PlayerScore> leaderBoard;
         private int maxPlayers;
 
         public ScoreBoard(int maxPlayers)
         {
             this.leaderBoard = new List<PlayerScore>();
-            this.maxPlayers = maxPlayers;
+            this.MaxPlayers = maxPlayers;
         }
 
         public int MaxPlayers 
@@ -32,29 +33,19 @@ namespace BullsAndCows
             }
         }
 
+        public IList<PlayerScore> LeaderBoard
+        {
+            get
+            {
+                this.leaderBoard.Sort();
+                this.leaderBoard = this.leaderBoard.Take(this.MaxPlayers).ToList();
+                return this.leaderBoard;
+            }
+        }
+
         public void AddPlayerScore(PlayerScore playerScore)
         {
-            if (this.leaderBoard.Count < this.MaxPlayers)
-            {
-                // TODO: extract a method 
-                for (int i = 0; i < this.leaderBoard.Count; i++)
-                {
-                    if (this.leaderBoard[i].Guesses > playerScore.Guesses)
-                    {
-                        this.leaderBoard.Insert(i, playerScore);
-                    }
-                }
-            }
-            else if (this.leaderBoard[this.MaxPlayers - 1].Guesses > playerScore.Guesses)
-            {
-                for (int i = 0; i < this.MaxPlayers; i++)
-                {
-                    if (this.leaderBoard[i].Guesses > playerScore.Guesses)
-                    {
-                        this.leaderBoard.Insert(i, playerScore);
-                    }
-                }
-            }
+            this.leaderBoard.Add(playerScore);
         }
     }
 }
