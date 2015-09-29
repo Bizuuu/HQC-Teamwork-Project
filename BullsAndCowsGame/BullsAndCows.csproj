@@ -55,6 +55,7 @@
     <Compile Include="BullsAndCowsGame.cs" />
     <Compile Include="BullsAndCowsTest.cs" />
     <Compile Include="Message.cs" />
+    <Compile Include="ParametersMessage.cs" />
     <Compile Include="PlayerScore.cs" />
     <Compile Include="Printer.cs" />
     <Compile Include="RandomNumberProvider.cs" />

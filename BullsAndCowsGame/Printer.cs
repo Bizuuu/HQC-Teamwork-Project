@@ -6,7 +6,7 @@
 
     public class Printer : IPrinter
     {
-        public void Print(MessageType message)
+        public void Print(MessageType message, int item = 0, int secondItem = 0)
         {
             switch (message)
             {
@@ -20,21 +20,17 @@
                     Console.WriteLine(new Message().Command);
                     break;
                 case MessageType.WrongNumber:
-                    Console.WriteLine(new Message().WrongNumber);
+                    Console.WriteLine(new ParametersMessage(item,secondItem).WrongNumber);
+                    break;
+                case MessageType.Congratulation:
+                    Console.WriteLine(new ParametersMessage(item).Congratulations);
+                    break;
+                case MessageType.CheatCongratulation:
+                    Console.WriteLine(new ParametersMessage(item,secondItem).CheatCongratulations);
                     break;
                 default:
                     throw new ArgumentNullException("No message type.");
             }
-        }
-
-        public void Print(string message)
-        {
-            Console.WriteLine(message);
-        }
-
-        public void PrintScoreBoard(ScoreBoard scoreBoard)
-        {
-
         }
     }
 }
