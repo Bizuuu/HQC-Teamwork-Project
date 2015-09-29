@@ -1,7 +1,8 @@
-﻿namespace BullsAndCows.Contracts
+﻿using BullsAndCows.Common;
+namespace BullsAndCows.Contracts
 {
     public interface IPrinter
     {
-        void Print(string message);
+        void Print(MessageType message);
     }
 }

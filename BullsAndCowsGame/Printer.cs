@@ -1,34 +1,30 @@
 ﻿namespace BullsAndCows
 {
+    using BullsAndCows.Common;
     using BullsAndCows.Contracts;
     using System;
 
     public class Printer : IPrinter
     {
-        public Printer()
+        public void Print(MessageType message)
         {
-        }
-
-
-        public string WelcomeMessage
-        {
-            get
+            switch (message)
             {
-                return "Welcome to “Bulls and Cows” game.";
+                case MessageType.Welcome:
+                    Console.WriteLine(new Message().Welcome);
+                    break;
+                case MessageType.GameRules:
+                    Console.WriteLine(new Message().GameRules);
+                    break;
+                case MessageType.Command:
+                    Console.WriteLine(new Message().Command);
+                    break;
+                case MessageType.WrongNumber:
+                    Console.WriteLine(new Message().WrongNumber);
+                    break;
+                default:
+                    throw new ArgumentNullException("No message type.");
             }
-        }
-
-        public string GameRulesMessage
-        {
-            get
-            {
-                return @"Please try to guess my secret 4-digit number. Use 'top' to view the top scoreboard, 'restart' to start a new game and 'help' to cheat and 'exit' to quit the game.";
-            }
-        }
-
-        public void Print(string message)
-        {
-            Console.WriteLine(message);
         }
     }
 }

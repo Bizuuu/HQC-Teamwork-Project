@@ -1,5 +1,6 @@
 ﻿namespace BullsAndCows
 {
+    using BullsAndCows.Common;
     using System;
     using System.Collections.Generic;
     using System.Text;
@@ -19,14 +20,8 @@
         public static void Play()
         {
             var printer = new Printer();
-            printer.Print(printer.WelcomeMessage);
-            printer.Print(printer.GameRulesMessage);
-            //Console.WriteLine(
-            //    "Welcome to “Bulls and Cows” game." +
-            //    "Please try to guess my secret 4-digit number." +
-            //    "Use 'top' to view the top scoreboard, 'restart'" +
-            //    "to start a new game and 'help'" +
-            //    " to cheat and 'exit' to quit the game.");
+            printer.Print(MessageType.Welcome);
+            printer.Print(MessageType.GameRules);
 
             Initialize();
             GenerateNumberForGuess();
@@ -35,7 +30,7 @@
 
             while (!isGuessed)
             {
-                Console.Write("Enter your guess or command: ");
+                printer.Print(MessageType.Command);
                 input = Console.ReadLine();
 
                 if (IsValidNumber(input))
@@ -106,6 +101,7 @@
             int bullsCount = 0;
             int cowsCount = 0;
             CountBullsAndCows(tryNumberString, ref bullsCount, ref cowsCount);
+            
             Console.WriteLine("Wrong number! Bulls: {0}, Cows: {1}!", bullsCount, cowsCount);
         }
 
