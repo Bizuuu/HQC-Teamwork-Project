@@ -59,6 +59,38 @@
             }
         }
 
+        public void PrintHelpingNumber(char[] helpingNumber)
+        {
+            Console.Write("The number looks like ");
+
+            foreach (char ch in helpingNumber)
+            {
+                Console.Write(ch);
+            }
+
+            Console.Write(".");
+            Console.WriteLine();
+        }
+
+        public void PrintCongratulationMessage(int cheatAttemptCounter, int guessAttemptCounter)
+        {
+            if (cheatAttemptCounter == 0)
+            {
+                Print(MessageType.Congratulation, guessAttemptCounter);
+                //Console.WriteLine(
+                //    "Congratulations! You guessed" +
+                //    " the secret number in {0} attempts.",
+                //    guessAttemptCounter);
+            }
+            else
+            {
+                Print(MessageType.CheatCongratulation, guessAttemptCounter, cheatAttemptCounter);
+                //Console.WriteLine("Congratulations! You guessed the" + " secret number in {0}" + " attempts and {1} cheats.", guessAttemptCounter, cheatAttemptCounter);
+            }
+
+            Console.WriteLine();
+        }
+
         private void DashedLine(int dashesForPrint)
         {
             for (int i = 0; i < dashesForPrint; i++)

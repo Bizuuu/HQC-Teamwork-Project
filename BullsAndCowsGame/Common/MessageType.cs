@@ -13,6 +13,5 @@ namespace BullsAndCows.Common
         WrongNumber,
         Congratulation,
         CheatCongratulation
-
     }
 }

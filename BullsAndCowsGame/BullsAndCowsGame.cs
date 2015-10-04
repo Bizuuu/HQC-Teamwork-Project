@@ -96,7 +96,7 @@
             if (IsEqualToNumberForGuess(numberAsString))
             {
                 isGuessed = true;
-                PrintCongratulationMessage();
+                printer.PrintCongratulationMessage(cheatAttemptCounter, guessAttemptCounter);
             }
             else
             {
@@ -170,26 +170,6 @@
             return cowsCount;
         }
 
-        private static void PrintCongratulationMessage()
-        {
-            var printer = new Printer();
-            if (cheatAttemptCounter == 0)
-            {
-                printer.Print(MessageType.Congratulation, guessAttemptCounter);
-                //Console.WriteLine(
-                //    "Congratulations! You guessed" +
-                //    " the secret number in {0} attempts.",
-                //    guessAttemptCounter);
-            }
-            else
-            {
-                printer.Print(MessageType.CheatCongratulation, guessAttemptCounter, cheatAttemptCounter);
-                //Console.WriteLine("Congratulations! You guessed the" + " secret number in {0}" + " attempts and {1} cheats.", guessAttemptCounter, cheatAttemptCounter);
-            }
-
-            Console.WriteLine();
-        }
-
         private static bool IsEqualToNumberForGuess(string tryNumber)
         {
             if (tryNumber == guessNumberToString)
@@ -243,20 +223,7 @@
                 c++;
             }
 
-            PrintHelpingNumber();
-        }
-
-        private static void PrintHelpingNumber()
-        {
-            Console.Write("The number looks like ");
-
-            foreach (char ch in helpingNumber)
-            {
-                Console.Write(ch);
-            }
-
-            Console.Write(".");
-            Console.WriteLine();
+            printer.PrintHelpingNumber(helpingNumber);
         }
 
         private static void CreateNewGame()
