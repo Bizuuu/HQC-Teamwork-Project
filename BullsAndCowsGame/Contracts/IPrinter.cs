@@ -4,6 +4,6 @@ namespace BullsAndCows.Contracts
 {
     public interface IPrinter
     {
-        void Print(MessageType message);
+        void Print(MessageType message, int item, int secondItem);
     }
 }

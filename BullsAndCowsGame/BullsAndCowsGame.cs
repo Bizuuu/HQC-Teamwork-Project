@@ -11,6 +11,7 @@
         private const byte GuessNumberLength = 4;
         private const byte AllDigitsCount = 10;
         private static ScoreBoard scoreBoard = new ScoreBoard(maxPlayersInScoreBoard);
+        private static Printer printer = new Printer();
         private static int cheatAttemptCounter;
         private static int guessAttemptCounter;
         private static string guessNumberToString;
@@ -21,8 +22,6 @@
 
         public static void Play()
         {
-            var printer = new Printer();
-
             if(name == null)
             {
                 Console.WriteLine("Please enter your name: ");
@@ -53,7 +52,7 @@
             }
 
             scoreBoard.AddPlayerScore(new PlayerScore(name, guessAttemptCounter));
-            PrintScoreboard();
+            printer.PrintLeaderBoard(scoreBoard.LeaderBoard);
             CreateNewGame();
         }
 
@@ -112,8 +111,8 @@
             var printer = new Printer();
 
             CountBullsAndCows(tryNumberString, ref bullsCount, ref cowsCount);
-            
-            printer.Print(MessageType.WrongNumber,bullsCount,cowsCount)
+
+            printer.Print(MessageType.WrongNumber, bullsCount, cowsCount);
            //Console.WriteLine("Wrong number! Bulls: {0}, Cows: {1}!", bullsCount, cowsCount);
         }
 
@@ -206,7 +205,7 @@
             switch (command.ToLower())
             {
                 case "top":
-                    PrintScoreboard();
+                    printer.PrintLeaderBoard(scoreBoard.LeaderBoard);
                     break;
                 case "help":
                     RevealDigit();
@@ -263,41 +262,6 @@
         private static void CreateNewGame()
         {
             Play();
-        }
-
-        private static void PrintScoreboard()
-        {
-            Console.WriteLine();
-            if (scoreBoard.LeaderBoard.Count > 0)
-            {
-                Console.WriteLine("Scoreboard:");
-                int currentPosition = 1;
-                Console.WriteLine("  {0,7} | {1}", "Guesses", "Name");
-                PrintLine(40);
-
-                foreach (var currentPlayerInfo in scoreBoard.LeaderBoard)
-                {
-                    Console.WriteLine("{0}| {1}", currentPosition, currentPlayerInfo);
-                    PrintLine(40);
-                    currentPosition++;
-                }
-
-                Console.WriteLine();
-            }
-            else
-            {
-                Console.WriteLine("Scoreboard is empty!");
-            }
-        }
-
-        private static void PrintLine(int dashesForPrint)
-        {
-            for (int i = 0; i < dashesForPrint; i++)
-            {
-                Console.Write("-");
-            }
-
-            Console.WriteLine();
         }
     }
 }
