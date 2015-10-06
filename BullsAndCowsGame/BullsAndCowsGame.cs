@@ -24,7 +24,7 @@
         {
             if (name == null)
             {
-                Console.WriteLine("Please enter your name: ");
+                Console.Write("Please enter your name: ");
                 name = Console.ReadLine();
             }
 

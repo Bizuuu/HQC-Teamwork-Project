@@ -62,8 +62,11 @@
     <Compile Include="ScoreBoard.cs" />
     <Compile Include="SortingAlgorithms\ComparerSorter.cs" />
     <Compile Include="SortingAlgorithms\ISorter.cs" />
+    <Compile Include="SortingAlgorithms\SelectionSorter.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Common\scores.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -7,9 +7,9 @@ namespace BullsAndCows.SortingAlgorithms
     {
         public List<PlayerScore> Sort(List<PlayerScore> leaderBoard)
         {
-            List<PlayerScore> playerScore = new List<PlayerScore>();
+            leaderBoard.Sort();
 
-            return playerScore;
+            return leaderBoard;
         }
     }
 }
