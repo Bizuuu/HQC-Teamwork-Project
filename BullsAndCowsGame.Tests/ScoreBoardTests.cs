@@ -51,7 +51,7 @@ namespace BullsAndCowsGame.Tests
                 scoreBoard.AddPlayerScore(new PlayerScore("Pesho" + i, i));
             }
 
-            Assert.AreEqual(expectedScoreBoard, scoreBoard, "Something went wrong");
+            Assert.AreEqual(expectedScoreBoard, scoreBoard.LeaderBoard, "LeaderBoards is not showing scores properly");
         }
     }
 }

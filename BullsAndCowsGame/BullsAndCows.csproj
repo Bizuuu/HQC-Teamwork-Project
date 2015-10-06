@@ -60,6 +60,8 @@
     <Compile Include="Printer.cs" />
     <Compile Include="RandomNumberProvider.cs" />
     <Compile Include="ScoreBoard.cs" />
+    <Compile Include="SortingAlgorithms\ComparerSorter.cs" />
+    <Compile Include="SortingAlgorithms\ISorter.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

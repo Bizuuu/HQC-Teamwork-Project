@@ -22,7 +22,7 @@
 
         public static void Play()
         {
-            if(name == null)
+            if (name == null)
             {
                 Console.WriteLine("Please enter your name: ");
                 name = Console.ReadLine();

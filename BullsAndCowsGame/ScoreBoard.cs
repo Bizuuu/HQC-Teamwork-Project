@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BullsAndCows.SortingAlgorithms;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -8,9 +9,11 @@ namespace BullsAndCows
     {
         private List<PlayerScore> leaderBoard;
         private int maxPlayers;
+        private ISorter sorter;
 
         public ScoreBoard(int maxPlayers)
         {
+            this.sorter = new ComparerSorter();
             this.leaderBoard = new List<PlayerScore>();
             this.MaxPlayers = maxPlayers;
         }
