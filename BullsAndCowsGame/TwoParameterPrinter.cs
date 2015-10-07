@@ -1,11 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace BullsAndCows
+﻿namespace BullsAndCows
 {
-    class TwoParameterPrinter:Printer
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+
+    public class TwoParameterPrinter:Printer
     {
     }
 }

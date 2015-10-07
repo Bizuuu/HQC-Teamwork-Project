@@ -28,6 +28,9 @@
                 name = Console.ReadLine();
             }
 
+            var pr = new OneParameterPrinter("5");
+            pr.Print()
+
             printer.Print(MessageType.Welcome);
             printer.Print(MessageType.GameRules);
 
@@ -96,6 +99,7 @@
             if (IsEqualToNumberForGuess(numberAsString))
             {
                 isGuessed = true;
+                
                 printer.PrintCongratulationMessage(cheatAttemptCounter, guessAttemptCounter);
             }
             else

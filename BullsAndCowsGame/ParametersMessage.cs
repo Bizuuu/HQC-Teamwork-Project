@@ -73,13 +73,7 @@ namespace BullsAndCows
             }
         }
 
-        public string Congratulations
-        {
-            get
-            {
-                return string.Format("Congratulations! You guessed the secret number in {0} attempts.", this.AttemptsNumber);
-            }
-        }
+        
 
         public string CheatCongratulations
         {

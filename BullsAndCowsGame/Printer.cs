@@ -6,7 +6,9 @@
     using System.Collections.Generic;
     public abstract class Printer
     {
+        public Message Message { get; set; }
 
+        public abstract void Print();
     }
 }
 //namespace BullsAndCows
