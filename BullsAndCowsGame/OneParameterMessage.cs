@@ -7,13 +7,21 @@ namespace BullsAndCows
 {
     public class OneParameterMessage:Message
     {
-        public string Argument { get; set; }
+        public OneParameterMessage(string message,int parameter)
+        {
+            this.Parameter = parameter;
+            this.Message = message;
+        }
 
-        public string Congratulations
+        public int Parameter { get; private set; }
+
+        public string Message { get; private set; }
+
+        public string ParameterMessage
         {
             get
             {
-                return string.Format("Congratulations! You guessed the secret number in {0} attempts.", this.Argument);
+                return string.Format(this.Message, this.Parameter);
             }
         }
     }

@@ -4,11 +4,12 @@
     using BullsAndCows.Contracts;
     using System;
     using System.Collections.Generic;
-    public abstract class Printer
+    public class Printer
     {
-        public Message Message { get; set; }
+        public void PrintOneParameterMessage(int parameter)
+        {
 
-        public abstract void Print();
+        }
     }
 }
 //namespace BullsAndCows
