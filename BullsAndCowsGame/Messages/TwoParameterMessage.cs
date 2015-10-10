@@ -2,7 +2,6 @@
 {
     public class TwoParameterMessage : Message
     {
-
         private Message message;
 
         public TwoParameterMessage(Message message, int parameter, int secondParameter)
@@ -17,11 +16,10 @@
         public object SecondParameter { get; private set; }
 
         public Message Message { get; private set; }
-        
 
         public override string Show()
         {
-            return string.Format(this.Message.Text, this.Parameter,this.SecondParameter);
+            return string.Format(this.Message.Text, this.Parameter, this.SecondParameter);
         }
     }
 }

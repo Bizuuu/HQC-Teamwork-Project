@@ -1,15 +1,13 @@
-﻿using System;
-using System.Text;
-using System.Collections.Generic;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using BullsAndCows;
-
-namespace BullsAndCowsGame.Tests
+﻿namespace BullsAndCowsGame.Tests
 {
+    using System;
+    using System.Collections.Generic;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using BullsAndCows;
+
     [TestClass]
     public class ScoreBoardTests
     {
-
         #region Additional test attributes
         //
         // You can use the following additional attributes as you write your tests:
@@ -45,8 +43,7 @@ namespace BullsAndCowsGame.Tests
             expectedScoreBoard.Add(new PlayerScore("Pesho3", 3));
             expectedScoreBoard.Add(new PlayerScore("Pesho4", 4));
 
-
-            for(int i = 0; i < maxPlayers; i++)
+            for (int i = 0; i < maxPlayers; i++)
             {
                 scoreBoard.AddPlayerScore(new PlayerScore("Pesho" + i, i));
             }

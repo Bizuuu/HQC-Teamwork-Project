@@ -1,11 +1,11 @@
 ﻿namespace BullsAndCows
 {
-    using BullsAndCows.Common;
-    using BullsAndCows.Contracts;
     using System;
     using System.Collections.Generic;
-
-    public class Printer:IPrinter
+    using BullsAndCows.Common;
+    using BullsAndCows.Contracts;
+    
+    public class Printer : IPrinter
     {
         public Printer()
         {
@@ -27,12 +27,12 @@
                 Console.WriteLine("Scoreboard:");
                 int currentPosition = 1;
                 Console.WriteLine("  {0,7} | {1}", "Guesses", "Name");
-                DashedLine(40);
+                this.DashedLine(40);
 
                 foreach (var currentPlayerInfo in leaderBoard)
                 {
                     Console.WriteLine("{0}| {1}", currentPosition, currentPlayerInfo);
-                    DashedLine(40);
+                    this.DashedLine(40);
                     currentPosition++;
                 }
 
@@ -61,11 +61,11 @@
         {
             if (cheatAttemptCounter == 0)
             {
-                Print(MessageType.Congratulation, guessAttemptCounter);
+                this.Print(MessageType.Congratulation, guessAttemptCounter);
             }
             else
             {
-                Print(MessageType.CheatCongratulation, guessAttemptCounter, cheatAttemptCounter);
+                this.Print(MessageType.CheatCongratulation, guessAttemptCounter, cheatAttemptCounter);
             }
 
             Console.WriteLine();

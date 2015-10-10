@@ -5,9 +5,9 @@
 
     public class Cows_buls
     {
-        private static int maxPlayersInScoreBoard = 5;
         private const byte GuessNumberLength = 4;
         private const byte AllDigitsCount = 10;
+        private static int maxPlayersInScoreBoard = 5;
         private static ScoreBoard scoreBoard = new ScoreBoard(maxPlayersInScoreBoard);
         private static Printer printer = new Printer();
         private static int cheatAttemptCounter;
@@ -25,7 +25,6 @@
                 printer.Print(MessageType.EnterName);
                 name = Console.ReadLine();
             }
-
 
             printer.Print(MessageType.Welcome);
             printer.Print(MessageType.GameRules);

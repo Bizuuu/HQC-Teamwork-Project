@@ -1,28 +1,28 @@
-﻿using BullsAndCows.SortingAlgorithms;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-
-namespace BullsAndCows
+﻿namespace BullsAndCows
 {
+    using System;
+    using System.Collections.Generic;
+    using System.IO;
+    using System.Linq;
+    using BullsAndCows.SortingAlgorithms;
+
     public class ScoreBoard
     {
-        public const string filePath = "../../Common/scores.txt";
+        public const string FilePath = "../../Common/scores.txt";
 
         private List<PlayerScore> leaderBoard;
         private int maxPlayers;
         private ISorter sorter;
-        
+
         public ScoreBoard(int maxPlayers)
         {
             this.sorter = new ComparerSorter();
-            this.leaderBoard = ReadScores();
+            this.leaderBoard = this.ReadScores();
             this.MaxPlayers = maxPlayers;
         }
 
-        public int MaxPlayers 
-        { 
+        public int MaxPlayers
+        {
             get
             {
                 return this.maxPlayers;
@@ -30,7 +30,7 @@ namespace BullsAndCows
 
             set
             {
-                if(value <= 0)
+                if (value <= 0)
                 {
                     throw new ArgumentOutOfRangeException("MaxPlayers should be a number bigger than 0");
                 }
@@ -44,7 +44,7 @@ namespace BullsAndCows
         {
             get
             {
-                this.leaderBoard = sorter.Sort(this.leaderBoard);
+                this.leaderBoard = this.sorter.Sort(this.leaderBoard);
                 this.leaderBoard = this.leaderBoard.Take(this.MaxPlayers).ToList();
 
                 return this.leaderBoard;
@@ -53,9 +53,9 @@ namespace BullsAndCows
 
         public void AddPlayerScore(PlayerScore playerScore)
         {
-            StreamWriter scoresWriter = new StreamWriter(filePath, true);
+            StreamWriter scoresWriter = new StreamWriter(FilePath, true);
 
-            using(scoresWriter)
+            using (scoresWriter)
             {
                 scoresWriter.WriteLine("{0} {1}", playerScore.NickName, playerScore.Guesses);
             }
@@ -65,7 +65,7 @@ namespace BullsAndCows
 
         private List<PlayerScore> ReadScores()
         {
-            StreamReader scoresReader = new StreamReader(filePath);
+            StreamReader scoresReader = new StreamReader(FilePath);
             List<PlayerScore> result = new List<PlayerScore>();
             string currLine = string.Empty;
 
