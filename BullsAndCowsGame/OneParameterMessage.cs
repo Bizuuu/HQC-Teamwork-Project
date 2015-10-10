@@ -7,22 +7,30 @@ namespace BullsAndCows
 {
     public class OneParameterMessage:Message
     {
-        public OneParameterMessage(string message,int parameter)
+        private Message message;
+
+        public OneParameterMessage(Message message,int parameter)
         {
             this.Parameter = parameter;
             this.Message = message;
         }
 
+        public override string Text
+        {
+            get; set;
+        }
+
         public int Parameter { get; private set; }
 
-        public string Message { get; private set; }
-
-        public string ParameterMessage
-        {
+        public Message Message {
             get
             {
-                return string.Format(this.Message, this.Parameter);
+                return this.message;
             }
-        }
+             private set
+            {
+                this.message = value;
+            }
+        } 
     }
 }
