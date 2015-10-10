@@ -12,10 +12,11 @@ namespace BullsAndCows
             this.Text = text;
         }
 
-        public override string Text
+        public string Text { get; set; }
+
+        public override string Show()
         {
-            get;
-            set;
+           return this.Text;
         }
     }
 }

@@ -2,7 +2,9 @@
 {
     public abstract class Message
     {
-        public abstract string Text { get; set; }
+        public string Text { get; private set; }
+
+        public abstract string Show();
     }
 }
 
