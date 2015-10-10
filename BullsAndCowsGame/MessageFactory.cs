@@ -1,11 +1,9 @@
-﻿using BullsAndCows.Common;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace BullsAndCows
+﻿namespace BullsAndCows
 {
+    using System;
+    using BullsAndCows.Common;
+    using BullsAndCows.Messages;
+
     public class MessageFactory
     {
         public string MakeMessage(MessageType message, int parameter = 0, int secondParameter = 0)
@@ -21,9 +19,15 @@ namespace BullsAndCows
                 case MessageType.WrongNumber:
                     return new TwoParameterMessage(new SimpleMessage("Wrong number! Bulls: {0}, Cows: {1}!"), parameter, secondParameter).Show();
                 case MessageType.Congratulation:
-                    return new OneParameterMessage(new SimpleMessage("Congratulations! You guessed the secret number in {0} attempts."),parameter).Show();
+                    return new OneParameterMessage(new SimpleMessage("Congratulations! You guessed the secret number in {0} attempts."), parameter).Show();
                 case MessageType.CheatCongratulation:
-                    return new TwoParameterMessage(new SimpleMessage("Congratulations! You guessed the secret number in {0} attempts and {1} cheats."),parameter,secondParameter).Show();
+                    return new TwoParameterMessage(new SimpleMessage("Congratulations! You guessed the secret number in {0} attempts and {1} cheats."), parameter, secondParameter).Show();
+                case MessageType.EnterName:
+                    return new SimpleMessage("Please enter your name: ").Show();
+                case MessageType.Exit:
+                    return new SimpleMessage("Good bye!").Show();
+                case MessageType.InvalidCommand:
+                    return new SimpleMessage("Invalid command!").Show();
                 default:
                     throw new ArgumentNullException("No message type.");
             }

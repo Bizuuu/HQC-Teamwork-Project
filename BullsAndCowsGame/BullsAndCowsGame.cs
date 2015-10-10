@@ -1,9 +1,7 @@
 ﻿namespace BullsAndCows
 {
-    using BullsAndCows.Common;
     using System;
-    using System.Collections.Generic;
-    using System.Text;
+    using BullsAndCows.Common;
 
     public class Cows_buls
     {
@@ -24,7 +22,7 @@
         {
             if (name == null)
             {
-                Console.Write("Please enter your name: ");
+                printer.Print(MessageType.EnterName);
                 name = Console.ReadLine();
             }
 
@@ -115,7 +113,6 @@
             CountBullsAndCows(tryNumberString, ref bullsCount, ref cowsCount);
 
             printer.Print(MessageType.WrongNumber, bullsCount, cowsCount);
-           //Console.WriteLine("Wrong number! Bulls: {0}, Cows: {1}!", bullsCount, cowsCount);
         }
 
         private static void CountBullsAndCows(string tryNumberString, ref int bullsCount, ref int cowsCount)
@@ -197,11 +194,11 @@
                     CreateNewGame();
                     return;
                 case "exit":
-                    Console.WriteLine("Good bye!");
+                    printer.Print(MessageType.Exit);
                     Environment.Exit(1);
                     break;
                 default:
-                    Console.WriteLine("Invalid command!");
+                    printer.Print(MessageType.InvalidCommand);
                     break;
             }
         }

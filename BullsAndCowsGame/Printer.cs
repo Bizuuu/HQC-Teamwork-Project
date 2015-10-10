@@ -4,7 +4,8 @@
     using BullsAndCows.Contracts;
     using System;
     using System.Collections.Generic;
-    public class Printer
+
+    public class Printer:IPrinter
     {
         public Printer()
         {
@@ -61,15 +62,10 @@
             if (cheatAttemptCounter == 0)
             {
                 Print(MessageType.Congratulation, guessAttemptCounter);
-                //Console.WriteLine(
-                //    "Congratulations! You guessed" +
-                //    " the secret number in {0} attempts.",
-                //    guessAttemptCounter);
             }
             else
             {
                 Print(MessageType.CheatCongratulation, guessAttemptCounter, cheatAttemptCounter);
-                //Console.WriteLine("Congratulations! You guessed the" + " secret number in {0}" + " attempts and {1} cheats.", guessAttemptCounter, cheatAttemptCounter);
             }
 
             Console.WriteLine();

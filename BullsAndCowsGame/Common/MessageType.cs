@@ -12,6 +12,9 @@ namespace BullsAndCows.Common
         Command,
         WrongNumber,
         Congratulation,
-        CheatCongratulation
+        CheatCongratulation,
+        EnterName,
+        Exit,
+        InvalidCommand
     }
 }

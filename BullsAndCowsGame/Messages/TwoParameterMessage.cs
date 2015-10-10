@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace BullsAndCows
+﻿namespace BullsAndCows.Messages
 {
     public class TwoParameterMessage : Message
     {
@@ -28,6 +23,5 @@ namespace BullsAndCows
         {
             return string.Format(this.Message.Text, this.Parameter,this.SecondParameter);
         }
-
     }
 }
