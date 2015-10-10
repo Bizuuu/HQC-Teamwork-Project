@@ -28,8 +28,6 @@
                 name = Console.ReadLine();
             }
 
-            var pr = new OneParameterPrinter("5");
-            pr.Print()
 
             printer.Print(MessageType.Welcome);
             printer.Print(MessageType.GameRules);
