@@ -4,7 +4,7 @@
     {
         private static void Main(string[] args)
         {
-            Cows_buls.Play();
+            BullsAndCowsGame.Play();
         }
     }
 }

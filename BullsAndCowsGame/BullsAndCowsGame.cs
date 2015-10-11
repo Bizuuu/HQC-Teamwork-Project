@@ -3,7 +3,7 @@
     using System;
     using BullsAndCows.Common;
 
-    public class Cows_buls
+    public class BullsAndCowsGame
     {
         private const byte GuessNumberLength = 4;
         private const byte AllDigitsCount = 10;
