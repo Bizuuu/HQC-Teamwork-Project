@@ -4,7 +4,8 @@
     {
         private static void Main(string[] args)
         {
-            BullsAndCowsGame.Play();
+            BullsAndCowsArcade arcade = new BullsAndCowsArcade();
+            arcade.StartGame();
         }
     }
 }
