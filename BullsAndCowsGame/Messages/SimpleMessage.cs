@@ -8,7 +8,7 @@
     public class SimpleMessage : Message, IMessage
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="SimpleMessage.cs" /> class.
+        /// Initializes a new instance of the SimpleMessage class.
         /// </summary>
         /// <param name="text">String value.</param>
         public SimpleMessage(string text)
@@ -17,7 +17,7 @@
         }
 
         /// <summary>
-        /// Shows the Message
+        /// Shows the Message.
         /// </summary>
         /// <returns>String value.</returns>
         public override string Show()
