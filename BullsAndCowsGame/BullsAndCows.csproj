@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BullsAndCowsResult.cs" />
     <Compile Include="CommandProcessors\CommandProcessor.cs" />
     <Compile Include="CommandProcessors\ExitCommandProcessor.cs" />
     <Compile Include="CommandProcessors\HelpCommandProcessor.cs" />
@@ -55,6 +56,7 @@
     <Compile Include="Contracts\IRandomNumberProvider.cs" />
     <Compile Include="BullsAndCowsGame.cs" />
     <Compile Include="BullsAndCowsTest.cs" />
+    <Compile Include="CowsAndBullsCounter.cs" />
     <Compile Include="MessageFactory.cs" />
     <Compile Include="Messages\Message.cs" />
     <Compile Include="Messages\OneParameterMessage.cs" />

@@ -111,6 +111,7 @@
 
             CountBullsAndCows(tryNumberString, ref bullsCount, ref cowsCount);
 
+
             printer.Print(MessageType.WrongNumber, bullsCount, cowsCount);
         }
 
@@ -136,7 +137,7 @@
 
             return cowsCount;
         }
-
+        // implemented in BullsAndCowsCounter
         private static int CountBulls(string tryNumberString, int bullsCount, bool[] bulls)
         {
             for (int i = 0; i < GuessNumberLength; i++)
