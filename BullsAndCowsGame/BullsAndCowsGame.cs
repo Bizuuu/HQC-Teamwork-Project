@@ -76,21 +76,20 @@
 
         public void RevealDigit()
         {
-            bool flag = false;
-            int c = 0;
-            while (!flag &&
-                   c != 2 * this.NumberForGuess.Length)
+            bool reveald = false;
+            this.CheatAttemptCounter++;
+
+            while (!reveald && this.CheatAttemptCounter <= 4)
             {
-                int digitForReveal = this.RandomNumberProvider.GenerateNumber(0, 4);
+
+                int digitForReveal = this.RandomNumberProvider.GenerateNumber(0, 3);
 
                 if (this.helpingNumber[digitForReveal] == 'X')
                 {
                     this.helpingNumber[digitForReveal] =
                     this.NumberForGuess[digitForReveal];
-                    flag = true;
+                    reveald = true;
                 }
-
-                c++;
             }
 
             this.Printer.PrintHelpingNumber(this.helpingNumber);
@@ -107,7 +106,7 @@
         //     {
         //         return false;
         //     }
-           
+
         //     for (int i = 0; i < GuessNumberLength; i++)
         //     {
         //         if (!char.IsDigit(input[i]))
@@ -115,7 +114,7 @@
         //             return false;
         //         }
         //     }
-           
+
         //     return true;
         // }
     }
