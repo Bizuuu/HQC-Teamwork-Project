@@ -50,6 +50,7 @@
     <Compile Include="CommandProcessors\TopCommandProcessor.cs" />
     <Compile Include="Common\MessageType.cs" />
     <Compile Include="Contracts\ICommandProcessor.cs" />
+    <Compile Include="Contracts\IMessage.cs" />
     <Compile Include="Contracts\IPrinter.cs" />
     <Compile Include="Contracts\IRandomNumberProvider.cs" />
     <Compile Include="BullsAndCowsGame.cs" />

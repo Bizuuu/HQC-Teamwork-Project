@@ -1,6 +1,8 @@
 ﻿namespace BullsAndCows.Messages
 {
-    public class SimpleMessage : Message
+    using BullsAndCows.Contracts;
+
+    public class SimpleMessage : Message,IMessage
     {
         public SimpleMessage(string text)
         {

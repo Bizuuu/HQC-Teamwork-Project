@@ -1,6 +1,8 @@
 ﻿namespace BullsAndCows.Messages
 {
-    public class OneParameterMessage : Message
+    using BullsAndCows.Contracts;
+
+    public class OneParameterMessage : Message,IMessage
     {
         private Message message;
 
