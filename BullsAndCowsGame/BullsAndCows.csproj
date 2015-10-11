@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BullsAndCowsArcade.cs" />
+    <Compile Include="BullsAndCowsResult.cs" />
     <Compile Include="CommandProcessors\CommandProcessor.cs" />
     <Compile Include="CommandProcessors\ExitCommandProcessor.cs" />
     <Compile Include="CommandProcessors\HelpCommandProcessor.cs" />
