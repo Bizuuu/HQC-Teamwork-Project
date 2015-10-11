@@ -15,7 +15,10 @@ namespace BullsAndCows.CommandProcessors
     /// </summary>
     internal class NumberCommandProcessor : CommandProcessor, ICommandProcessor
     {
-        private const string NullExeptionText = "There is no successor for NumberCommandProcessor.";
+        /// <summary>
+        /// Null exception text.
+        /// </summary>
+        private const string NullExceptionText = "There is no successor for NumberCommandProcessor.";
 
         /// <summary>
         /// Gets or sets the BullsAndCowsCounter responsible for calculating the score.
@@ -67,7 +70,7 @@ namespace BullsAndCows.CommandProcessors
             }
             else
             {
-                throw new ArgumentNullException(NullExeptionText);
+                throw new ArgumentNullException(NullExceptionText);
             }
         }
 

@@ -15,8 +15,16 @@ namespace BullsAndCows.CommandProcessors
     /// </summary>
     internal class HelpCommandProcessor : CommandProcessor, ICommandProcessor
     {
+        /// <summary>
+        /// Help command.
+        /// </summary>
         private const string HelpCommand = "help";
-        private const string NullExeptionText = "There is no successor for HelpCommandProcessor.";
+
+        /// <summary>
+        /// No successor.
+        /// </summary>
+        private const string NullExceptionText = "There is no successor for HelpCommandProcessor.";
+
         /// <summary>
         /// Calls the RevealDigit method on the game or passes to the next Successor.
         /// </summary>
@@ -35,7 +43,7 @@ namespace BullsAndCows.CommandProcessors
             }
             else
             {
-                throw new ArgumentNullException(NullExeptionText);
+                throw new ArgumentNullException(NullExceptionText);
             }
         }
     }

@@ -13,9 +13,16 @@ namespace BullsAndCows
     /// </summary>
     public class PlayerScore : IComparable<PlayerScore>
     {
-        private readonly string ResultStringFormatText = "{0,3}    | {1}";
+        /// <summary>
+        /// Result string format.
+        /// </summary>
+        private const string ResultStringFormatText = "{0,3}    | {1}";
 
-        private const string NicknameNullExeptionText = "NickName should have at least 1 symbol!";
+        /// <summary>
+        /// Nickname null exception text.
+        /// </summary>
+        private const string NicknameNullExceptionText = "NickName should have at least 1 symbol!";
+
         /// <summary>
         /// Nick name.
         /// </summary>
@@ -42,11 +49,12 @@ namespace BullsAndCows
             {
                 return this.nickName;
             }
+
             set
             {
                 if (string.IsNullOrWhiteSpace(value))
                 {
-                    throw new ArgumentNullException(NicknameNullExeptionText);
+                    throw new ArgumentNullException(NicknameNullExceptionText);
                 }
 
                 this.nickName = value;

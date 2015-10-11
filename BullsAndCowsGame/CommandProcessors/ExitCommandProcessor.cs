@@ -15,8 +15,15 @@ namespace BullsAndCows.CommandProcessors
     /// </summary>
     internal class ExitCommandProcessor : CommandProcessor, ICommandProcessor
     {
+        /// <summary>
+        /// Exit command.
+        /// </summary>
         private const string ExitCommand = "exit";
-        private const string NullExeptionText = "There is no successor for ExitCommandProcessor.";
+
+        /// <summary>
+        /// No successor.
+        /// </summary>
+        private const string NullExceptionText = "There is no successor for ExitCommandProcessor.";
 
         /// <summary>
         /// Decides whether it can process the command or passes it to the next Successor.
@@ -36,7 +43,7 @@ namespace BullsAndCows.CommandProcessors
             }
             else
             {
-                throw new ArgumentNullException(NullExeptionText);
+                throw new ArgumentNullException(NullExceptionText);
             }
         }
     }

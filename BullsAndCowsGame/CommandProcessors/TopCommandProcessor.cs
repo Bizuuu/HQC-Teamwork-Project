@@ -15,8 +15,15 @@ namespace BullsAndCows.CommandProcessors
     /// </summary>
     internal class TopCommandProcessor : CommandProcessor, ICommandProcessor
     {
+        /// <summary>
+        /// Score board command.
+        /// </summary>
         private const string ScoreBoardPrint = "top";
-        private const string NullExeptionText = "There is no successor for TopCommandProcessor.";
+
+        /// <summary>
+        /// Null exception text.
+        /// </summary>
+        private const string NullExceptionText = "There is no successor for TopCommandProcessor.";
 
         /// <summary>
         /// Tells the printer to print the scoreboard.
@@ -35,7 +42,7 @@ namespace BullsAndCows.CommandProcessors
             }
             else
             {
-                throw new ArgumentNullException(NullExeptionText);
+                throw new ArgumentNullException(NullExceptionText);
             }
         }
     }

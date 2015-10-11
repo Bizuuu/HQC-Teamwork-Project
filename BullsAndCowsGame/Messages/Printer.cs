@@ -16,15 +16,51 @@ namespace BullsAndCows.Messages
     /// </summary>
     public class Printer : IPrinter
     {
+        /// <summary>
+        /// Score board.
+        /// </summary>
         private const string ScoreBoardText = "Scoreboard:";
+
+        /// <summary>
+        /// Text format.
+        /// </summary>
         private const string FormatText = "  {0,7} | {1}";
+
+        /// <summary>
+        /// Guessed text format.
+        /// </summary>
         private const string GuessesText = "  {0,7} | {1}";
+
+        /// <summary>
+        /// Name string constant.
+        /// </summary>
         private const string NameText = "Name";
+
+        /// <summary>
+        /// Current position text.
+        /// </summary>
         private const string CurrentPositionFormatText = "{0}| {1}";
+
+        /// <summary>
+        /// Empty scoreboard text.
+        /// </summary>
         private const string EmptyScoreBoardText = "Scoreboard is empty!";
+
+        /// <summary>
+        /// Number looks like text.
+        /// </summary>
         private const string NumberLooksLikeText = "The number looks like ";
+
+        /// <summary>
+        /// Point constant.
+        /// </summary>
         private const string PointText = ".";
+
+        /// <summary>
+        /// Dash constant.
+        /// </summary>
         private const string DashText = "-";
+
         /// <summary>
         /// Initializes a new instance of the <see cref="Printer" /> class.
         /// </summary>

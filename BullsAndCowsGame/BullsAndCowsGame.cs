@@ -15,7 +15,11 @@ namespace BullsAndCows
     /// </summary>
     public class BullsAndCowsGame : IDisposable
     {
+        /// <summary>
+        /// Char "X" constant.
+        /// </summary>
         private const char XChar = 'X';
+
         /// <summary>
         /// The helping number of the users using the "help" command.
         /// </summary>

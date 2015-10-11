@@ -22,14 +22,25 @@ namespace BullsAndCows
         /// </summary>
         public const string FilePath = "../../Common/scores.txt";
 
-        private const string MaxPlayerExeptionText = "MaxPlayers should be a number bigger than 0";
+        /// <summary>
+        /// Max player text exception.
+        /// </summary>
+        private const string MaxPlayerExceptionText = "MaxPlayers should be a number bigger than 0";
 
+        /// <summary>
+        /// Format for Score writer.
+        /// </summary>
         private const string ScoreWriterFormatText = "{0} {1}";
 
+        /// <summary>
+        /// Space char constant.
+        /// </summary>
         private const char SpaceChar = ' ';
 
+        /// <summary>
+        /// Space string constant.
+        /// </summary>
         private const string SpaceString = " ";
-
 
         /// <summary>
         /// List of scores.
@@ -72,7 +83,7 @@ namespace BullsAndCows
             {
                 if (value <= 0)
                 {
-                    throw new ArgumentOutOfRangeException(MaxPlayerExeptionText);
+                    throw new ArgumentOutOfRangeException(MaxPlayerExceptionText);
                 }
 
                 this.maxPlayers = value;
