@@ -2,6 +2,7 @@
 {
     using System;
     using Contracts;
+    using Common;
 
     internal class TopCommandProcessor : CommandProcessor, ICommandProcessor
     {
@@ -9,7 +10,7 @@
         {
             if (command == "top")
             {
-                throw new NotImplementedException();
+                game.Printer.PrintLeaderBoard(game.ScoreBoard.LeaderBoard);
             }
             else if (this.Successor != null)
             {

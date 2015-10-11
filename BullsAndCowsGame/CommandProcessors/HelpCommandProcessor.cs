@@ -2,6 +2,7 @@
 {
     using System;
     using Contracts;
+    using Common;
 
     internal class HelpCommandProcessor : CommandProcessor, ICommandProcessor
     {
@@ -9,7 +10,8 @@
         {
             if (command == "help")
             {
-                throw new NotImplementedException();
+                game.RevealDigit();
+                game.CheatAttemptCounter++;
             }
             else if (this.Successor != null)
             {

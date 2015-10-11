@@ -4,11 +4,10 @@
     using BullsAndCows.Common;
     using Contracts;
 
-    public class BullsAndCowsGame
+    public class BullsAndCowsGame : IDisposable
     {
         private const byte GuessNumberLength = 4;
         private const byte AllDigitsCount = 10;
-        private int cheatAttemptCounter;
         private int guessAttemptCounter;
         private bool isGuessed;
         private char[] helpingNumber;
@@ -35,6 +34,8 @@
         public ICommandProcessor CommandProcessor { get; private set; }
 
         public string NumberForGuess { get; private set; }
+
+        public int CheatAttemptCounter { get; set; }
 
         public void Play()
         {
@@ -66,7 +67,7 @@
         {
             this.NumberForGuess = RandomNumberProvider.GenerateNumber(1000, 9999).ToString();
             guessAttemptCounter = 0;
-            cheatAttemptCounter = 0;
+            this.CheatAttemptCounter = 0;
             isGuessed = false;
             helpingNumber = new char[] { 'X', 'X', 'X', 'X' };
         }
@@ -97,7 +98,7 @@
             {
                 isGuessed = true;
 
-                Printer.PrintCongratulationMessage(cheatAttemptCounter, guessAttemptCounter);
+                Printer.PrintCongratulationMessage(this.CheatAttemptCounter, guessAttemptCounter);
             }
             else
             {
@@ -188,11 +189,8 @@
                     break;
                 case "help":
                     RevealDigit();
-                    cheatAttemptCounter++;
+                    this.CheatAttemptCounter++;
                     break;
-                case "restart":
-                    CreateNewGame();
-                    return;
                 case "exit":
                     Printer.PrintMessage(MessageType.Exit);
                     Environment.Exit(1);
@@ -203,7 +201,7 @@
             }
         }
 
-        private void RevealDigit()
+        public void RevealDigit()
         {
             bool flag = false;
             int c = 0;
@@ -225,9 +223,9 @@
             Printer.PrintHelpingNumber(helpingNumber);
         }
 
-        private void CreateNewGame()
+        public void Dispose()
         {
-            Play();
+            Initialize();
         }
     }
 }

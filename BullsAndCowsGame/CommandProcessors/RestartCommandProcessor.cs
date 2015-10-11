@@ -2,6 +2,7 @@
 {
     using System;
     using Contracts;
+    using Common;
 
     internal class RestartCommandProcessor : CommandProcessor, ICommandProcessor
     {
@@ -9,7 +10,8 @@
         {
             if (command == "restart")
             {
-                throw new NotImplementedException();
+                game.Dispose();
+                game.Play();
             }
             else if (this.Successor != null)
             {

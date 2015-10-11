@@ -2,6 +2,7 @@
 {
     using System;
     using Contracts;
+    using Common;
 
     internal class ExitCommandProcessor : CommandProcessor, ICommandProcessor
     {
@@ -9,7 +10,8 @@
         {
             if (command == "exit")
             {
-                throw new NotImplementedException();
+                game.Printer.PrintMessage(MessageType.Exit);
+                Environment.Exit(1);
             }
             else if (this.Successor != null)
             {
