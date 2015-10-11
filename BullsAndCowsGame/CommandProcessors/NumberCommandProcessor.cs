@@ -26,7 +26,7 @@
 
             if (int.TryParse(command, out commandAsNumber))
             {
-                if (!IsGuessedCorrectly(command, game))
+                if (!this.IsGuessedCorrectly(command, game))
                 {
                     BullsAndCowsCounter.Dispose();
                     this.BullsAndCowsResult = BullsAndCowsCounter.CountBullsAndCows(command);

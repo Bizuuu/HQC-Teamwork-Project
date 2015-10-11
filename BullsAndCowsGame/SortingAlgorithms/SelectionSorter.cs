@@ -18,12 +18,12 @@
                 {
                     if (leaderBoard[j].Guesses < leaderBoard[minPosition].Guesses)
                     {
-                        //minPosition will keep track of the index that min is in, this is needed when a swap happens
+                        // minPosition will keep track of the index that min is in, this is needed when a swap happens
                         minPosition = j;
                     }
                 }
 
-                //if minPosition no longer equals i then a smaller value must have been found, so a swap must occur
+                // if minPosition no longer equals i then a smaller value must have been found, so a swap must occur
                 if (minPosition != i)
                 {
                     scoreTemporaryHolder = leaderBoard[i];

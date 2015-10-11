@@ -5,7 +5,7 @@
     using Contracts;
 
     public class BullsAndCowsGame : IDisposable
-    {        
+    {
         private char[] helpingNumber;
         private string playerName;
 
@@ -39,7 +39,6 @@
 
         public void Play()
         {
-
             if (this.playerName == null)
             {
                 this.Printer.PrintMessage(MessageType.EnterName);
@@ -53,11 +52,10 @@
 
             while (!this.IsGuessed)
             {
-               
                 this.Printer.PrintMessage(MessageType.Command);
                 input = Console.ReadLine();
                 this.GuessAttemptCounter++;
-               
+
                 this.CommandProcessor.ProcessCommand(input, this);
             }
 
@@ -103,22 +101,22 @@
             this.Initialize();
         }
 
-        //private bool IsValidNumber(string input)
-        //{
-        //    if (input.Length != GuessNumberLength)
-        //    {
-        //        return false;
-        //    }
-
-        //    for (int i = 0; i < GuessNumberLength; i++)
-        //    {
-        //        if (!char.IsDigit(input[i]))
-        //        {
-        //            return false;
-        //        }
-        //    }
-
-        //    return true;
-        //}
+        // private bool IsValidNumber(string input)
+        // {
+        //     if (input.Length != GuessNumberLength)
+        //     {
+        //         return false;
+        //     }
+           
+        //     for (int i = 0; i < GuessNumberLength; i++)
+        //     {
+        //         if (!char.IsDigit(input[i]))
+        //         {
+        //             return false;
+        //         }
+        //     }
+           
+        //     return true;
+        // }
     }
 }

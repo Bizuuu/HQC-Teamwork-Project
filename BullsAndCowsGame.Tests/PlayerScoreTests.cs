@@ -1,8 +1,8 @@
 ﻿namespace BullsAndCowsGame.Tests
 {
     using System;
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
     using BullsAndCows;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
 
     [TestClass]
     public class PlayerScoreTests

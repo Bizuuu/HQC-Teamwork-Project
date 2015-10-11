@@ -1,9 +1,9 @@
 ﻿namespace BullsAndCowsGame.Tests
 {
     using System;
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
     using BullsAndCows;
     using BullsAndCows.Contracts;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
 
     [TestClass]
     public class RandomNumberProviderTests
