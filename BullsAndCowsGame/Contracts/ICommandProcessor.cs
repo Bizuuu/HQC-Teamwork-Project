@@ -1,4 +1,5 @@
-﻿namespace BullsAndCows.Contracts
+﻿// <summary>Contains the ICommandProcessor interface.</summary>
+namespace BullsAndCows.Contracts
 {
     /// <summary>
     /// Holds the need properties and methods for a class to be CommandProcessor. Implements chain of responsibility.

@@ -1,4 +1,5 @@
-﻿namespace BullsAndCows.CommandProcessors
+﻿// <summary>Contains the InvalidCommandProcessor class.</summary>
+namespace BullsAndCows.CommandProcessors
 {
     using System;
     using Common;

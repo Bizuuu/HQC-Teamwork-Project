@@ -1,4 +1,5 @@
-﻿namespace BullsAndCows.CommandProcessors
+﻿// <summary>Contains the NumberCommandProcessor class.</summary>
+namespace BullsAndCows.CommandProcessors
 {
     using System;
     using Common;

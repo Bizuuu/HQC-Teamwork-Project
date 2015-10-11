@@ -1,4 +1,5 @@
-﻿namespace BullsAndCows.Contracts
+﻿// <summary>Contains the IMessage interface.</summary>
+namespace BullsAndCows.Contracts
 {
     /// <summary>
     /// Defines the methods a message should have.

@@ -1,4 +1,5 @@
-﻿namespace BullsAndCows.Common
+﻿// <summary>Contains the MessageType enumeration.</summary>
+namespace BullsAndCows.Common
 {
     /// <summary>
     /// Holds the different types of messages that can be displayed.

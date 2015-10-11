@@ -1,4 +1,5 @@
-﻿namespace BullsAndCows.CommandProcessors
+﻿// <summary>Contains the abstract CommandProcessor class.</summary>
+namespace BullsAndCows.CommandProcessors
 {
     using Contracts;
 

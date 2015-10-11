@@ -1,4 +1,5 @@
-﻿namespace BullsAndCows.Contracts
+﻿// <summary>Contains the IPrinter interface.</summary>
+namespace BullsAndCows.Contracts
 {
     using System.Collections.Generic;
     using Common;

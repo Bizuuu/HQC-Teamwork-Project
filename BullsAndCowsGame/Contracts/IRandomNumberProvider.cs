@@ -1,4 +1,5 @@
-﻿namespace BullsAndCows.Contracts
+﻿// <summary>Contains the IRandomNumberGenerator interface.</summary>
+namespace BullsAndCows.Contracts
 {
     /// <summary>
     /// Holds the needed method for a randomNumberProvider.
