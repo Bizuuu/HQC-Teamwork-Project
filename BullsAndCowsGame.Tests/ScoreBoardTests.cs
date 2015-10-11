@@ -1,4 +1,5 @@
-﻿namespace BullsAndCows.Tests
+﻿// <summary>Contains the ScoreBoardTests class.</summary>
+namespace BullsAndCows.Tests
 {
     using System.Collections.Generic;
     using BullsAndCows;

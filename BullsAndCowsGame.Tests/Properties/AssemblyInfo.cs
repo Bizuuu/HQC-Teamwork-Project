@@ -1,4 +1,5 @@
-﻿using System.Reflection;
+﻿// <summary>Contains the AssemblyInfo.</summary>
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 

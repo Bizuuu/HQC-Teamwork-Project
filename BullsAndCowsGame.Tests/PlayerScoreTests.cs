@@ -1,4 +1,5 @@
-﻿namespace BullsAndCows.Tests
+﻿// <summary>Contains the PlayerScoreTests class.</summary>
+namespace BullsAndCows.Tests
 {
     using System;
     using BullsAndCows;

@@ -1,4 +1,5 @@
-﻿namespace BullsAndCows.Tests
+﻿// <summary>Contains the RandomNumberProviderTests class.</summary>
+namespace BullsAndCows.Tests
 {
     using BullsAndCows;
     using Contracts;
