@@ -1,4 +1,5 @@
-﻿namespace BullsAndCows.Messages
+﻿// <summary>Contains the abstract Message class.</summary>
+namespace BullsAndCows.Messages
 {
     using Contracts;
 

@@ -1,4 +1,5 @@
-﻿namespace BullsAndCows
+﻿// <summary>Contains the BullsAndCowsArcade class.</summary>
+namespace BullsAndCows
 {
     using CommandProcessors;
     using Contracts;

@@ -1,4 +1,5 @@
-﻿namespace BullsAndCows
+﻿// <summary>Contains the BullsAndCowsGame class.</summary>
+namespace BullsAndCows
 {
     using System;
     using Common;

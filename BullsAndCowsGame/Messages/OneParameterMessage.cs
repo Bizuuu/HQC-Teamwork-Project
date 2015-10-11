@@ -1,4 +1,5 @@
-﻿namespace BullsAndCows.Messages
+﻿// <summary>Contains the OneParameterMessage class.</summary>
+namespace BullsAndCows.Messages
 {
     using Contracts;
 

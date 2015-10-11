@@ -1,4 +1,5 @@
-﻿namespace BullsAndCows
+﻿// <summary>Contains the BullsAndCowsCounter class.</summary>
+namespace BullsAndCows
 {
     using System;
 

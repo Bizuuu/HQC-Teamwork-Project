@@ -1,4 +1,5 @@
-﻿namespace BullsAndCows.Messages
+﻿// <summary>Contains the Printer class.</summary>
+namespace BullsAndCows.Messages
 {
     using System;
     using System.Collections.Generic;

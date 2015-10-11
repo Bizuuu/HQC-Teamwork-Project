@@ -1,4 +1,5 @@
-﻿namespace BullsAndCows.SortingAlgorithms
+﻿// <summary>Contains the ISorter interface.</summary>
+namespace BullsAndCows.SortingAlgorithms
 {
     using System;
     using System.Collections.Generic;

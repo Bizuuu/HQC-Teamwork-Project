@@ -1,6 +1,4 @@
-﻿// <header>
-// A file containing the TwoParamterMessage class.
-// </header>
+﻿// <summary>Contains the TwoParameterMessage class.</summary>
 namespace BullsAndCows.Messages
 {
     using Contracts;

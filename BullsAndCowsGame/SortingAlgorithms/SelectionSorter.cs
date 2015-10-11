@@ -1,4 +1,5 @@
-﻿namespace BullsAndCows.SortingAlgorithms
+﻿// <summary>Contains the SelectionSorter class.</summary>
+namespace BullsAndCows.SortingAlgorithms
 {
     using System;
     using System.Collections.Generic;

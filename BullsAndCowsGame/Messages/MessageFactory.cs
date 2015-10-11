@@ -1,4 +1,5 @@
-﻿namespace BullsAndCows.Messages
+﻿// <summary>Contains the MessageFactory class.</summary>
+namespace BullsAndCows.Messages
 {
     using System;
     using Common;
