@@ -2,20 +2,37 @@
 {
     using System;
     using Contracts;
+    using Common;
 
     internal class NumberCommandProcessor : CommandProcessor, ICommandProcessor
     {
-        public override void ProcessCommand(string command)
+        public NumberCommandProcessor()
+            : base()
         {
+
+        }
+
+        private BullsAndCowsCounter BullsAndCowsCounter { get; set; }
+        private BullsAndCowsResult BullsAndCowsResult { get; set; }
+
+        public override void ProcessCommand(string command, BullsAndCowsGame game)
+        {
+            if (BullsAndCowsCounter == null)
+            {
+                BullsAndCowsCounter = new BullsAndCowsCounter(game.NumberForGuess);
+            }
+
             int commandAsNumber;
 
             if (int.TryParse(command, out commandAsNumber))
             {
-                throw new NotImplementedException();
+                BullsAndCowsCounter.Dispose();
+                this.BullsAndCowsResult = BullsAndCowsCounter.CountBullsAndCows(command);
+                game.Printer.PrintMessage(MessageType.WrongNumber, this.BullsAndCowsResult.Bulls, this.BullsAndCowsResult.Cows);
             }
             else if (this.Successor != null)
             {
-                this.Successor.ProcessCommand(command);
+                this.Successor.ProcessCommand(command, game);
             }
             else
             {

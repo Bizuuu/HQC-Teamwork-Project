@@ -11,6 +11,6 @@
             this.Successor = successor;
         }
 
-        public abstract void ProcessCommand(string command);
+        public abstract void ProcessCommand(string command, BullsAndCowsGame game);
     }
 }

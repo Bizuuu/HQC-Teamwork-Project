@@ -5,7 +5,7 @@
 
     internal class TopCommandProcessor : CommandProcessor, ICommandProcessor
     {
-        public override void ProcessCommand(string command)
+        public override void ProcessCommand(string command, BullsAndCowsGame game)
         {
             if (command == "top")
             {
@@ -13,7 +13,7 @@
             }
             else if (this.Successor != null)
             {
-                this.Successor.ProcessCommand(command);
+                this.Successor.ProcessCommand(command, game);
             }
             else
             {

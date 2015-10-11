@@ -5,7 +5,7 @@
 
     internal class RestartCommandProcessor : CommandProcessor, ICommandProcessor
     {
-        public override void ProcessCommand(string command)
+        public override void ProcessCommand(string command, BullsAndCowsGame game)
         {
             if (command == "restart")
             {
@@ -13,7 +13,7 @@
             }
             else if (this.Successor != null)
             {
-                this.Successor.ProcessCommand(command);
+                this.Successor.ProcessCommand(command, game);
             }
             else
             {

@@ -4,6 +4,6 @@
     {
         void SetSuccessor(ICommandProcessor successor);
 
-        void ProcessCommand(string command);
+        void ProcessCommand(string command, BullsAndCowsGame game);
     }
 }
