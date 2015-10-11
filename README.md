@@ -94,11 +94,11 @@
 ### Other Improvements
 1. Introduced constants
     - Examples
-        ```cs
+        ```c#
         private const byte GuessNumberLength = 4;
         private const byte AllDigitsCount = 10;
         ```
-        ```cs
+        ```c#
         public const string FilePath = "../../Common/scores.txt";
         ```
 
