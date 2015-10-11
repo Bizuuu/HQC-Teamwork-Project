@@ -7,10 +7,6 @@
     {
         private const int MaxPlayersInScoreboard = 5;
 
-        public BullsAndCowsArcade()
-        {
-        }
-
         public void StartGame()
         {
             this.Initialize();
@@ -30,6 +26,9 @@
 
             ExitCommandProcessor exitCommandProcessor = new ExitCommandProcessor();
             restartCommandProcessor.SetSuccessor(exitCommandProcessor);
+
+            InvalidCommandProcessor invalidCommandProcessor = new InvalidCommandProcessor();
+            exitCommandProcessor.SetSuccessor(invalidCommandProcessor);
 
             ScoreBoard scoreBoard = new ScoreBoard(MaxPlayersInScoreboard);
             MessageFactory messageFactory = new MessageFactory();
