@@ -4,7 +4,7 @@
     using System.Collections.Generic;
     using System.IO;
     using System.Linq;
-    using BullsAndCows.SortingAlgorithms;
+    using SortingAlgorithms;
 
     public class ScoreBoard
     {

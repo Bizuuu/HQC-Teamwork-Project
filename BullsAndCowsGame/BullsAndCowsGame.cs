@@ -1,7 +1,7 @@
 ﻿namespace BullsAndCows
 {
     using System;
-    using BullsAndCows.Common;
+    using Common;
     using Contracts;
 
     public class BullsAndCowsGame : IDisposable

@@ -1,7 +1,7 @@
 ﻿namespace BullsAndCows.Contracts
 {
     using System.Collections.Generic;
-    using BullsAndCows.Common;
+    using Common;
 
     public interface IPrinter
     {

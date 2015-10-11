@@ -1,7 +1,7 @@
 ﻿namespace BullsAndCows
 {
     using System;
-    using BullsAndCows.Contracts;
+    using Contracts;
 
     public class RandomNumberProvider : IRandomNumberProvider
     {

@@ -1,6 +1,5 @@
-﻿namespace BullsAndCowsGame.Tests
+﻿namespace BullsAndCows.Tests
 {
-    using System;
     using System.Collections.Generic;
     using BullsAndCows;
     using Microsoft.VisualStudio.TestTools.UnitTesting;

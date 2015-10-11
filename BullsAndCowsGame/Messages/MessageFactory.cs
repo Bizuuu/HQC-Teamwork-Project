@@ -1,8 +1,7 @@
 ﻿namespace BullsAndCows.Messages
 {
     using System;
-    using BullsAndCows.Common;
-    using BullsAndCows.Messages;
+    using Common;
 
     public class MessageFactory
     {

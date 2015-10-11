@@ -1,6 +1,6 @@
 ﻿namespace BullsAndCows.Messages
 {
-    using BullsAndCows.Contracts;
+    using Contracts;
 
     public abstract class Message : IMessage
     {

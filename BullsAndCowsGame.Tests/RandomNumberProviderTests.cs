@@ -1,8 +1,7 @@
-﻿namespace BullsAndCowsGame.Tests
+﻿namespace BullsAndCows.Tests
 {
-    using System;
     using BullsAndCows;
-    using BullsAndCows.Contracts;
+    using Contracts;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
 
     [TestClass]

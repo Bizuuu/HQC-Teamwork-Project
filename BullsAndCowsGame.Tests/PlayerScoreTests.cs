@@ -1,4 +1,4 @@
-﻿namespace BullsAndCowsGame.Tests
+﻿namespace BullsAndCows.Tests
 {
     using System;
     using BullsAndCows;
