@@ -19,7 +19,7 @@
 
         public override string Show()
         {
-            return string.Format(this.Message.Text, this.Parameter, this.SecondParameter);
+            return string.Format(this.Message.Show(), this.Parameter, this.SecondParameter);
         }
     }
 }

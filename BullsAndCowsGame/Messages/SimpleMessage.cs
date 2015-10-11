@@ -7,8 +7,6 @@
             this.Text = text;
         }
 
-        public string Text { get; set; }
-
         public override string Show()
         {
            return this.Text;

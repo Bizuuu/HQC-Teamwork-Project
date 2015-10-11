@@ -16,7 +16,7 @@
 
         public override string Show()
         {
-            return string.Format(this.Message.Text, this.Parameter);
+            return string.Format(this.Message.Show(), this.Parameter);
         }
     }
 }

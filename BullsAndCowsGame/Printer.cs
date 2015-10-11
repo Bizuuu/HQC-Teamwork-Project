@@ -27,12 +27,12 @@
                 Console.WriteLine("Scoreboard:");
                 int currentPosition = 1;
                 Console.WriteLine("  {0,7} | {1}", "Guesses", "Name");
-                this.DashedLine(40);
+                this.PrintDashedLine(40);
 
                 foreach (var currentPlayerInfo in leaderBoard)
                 {
                     Console.WriteLine("{0}| {1}", currentPosition, currentPlayerInfo);
-                    this.DashedLine(40);
+                    this.PrintDashedLine(40);
                     currentPosition++;
                 }
 
@@ -71,7 +71,7 @@
             Console.WriteLine();
         }
 
-        private void DashedLine(int dashesForPrint)
+        private void PrintDashedLine(int dashesForPrint)
         {
             for (int i = 0; i < dashesForPrint; i++)
             {
