@@ -1,4 +1,9 @@
 ﻿// <summary>Contains the Printer class.</summary>
+//-----------------------------------------------------------------------
+// <copyright file="Printer.cs" company="Bulls-And-Cows-1">
+//     Everything is copyrighted.
+// </copyright>
+//-----------------------------------------------------------------------
 namespace BullsAndCows.Messages
 {
     using System;

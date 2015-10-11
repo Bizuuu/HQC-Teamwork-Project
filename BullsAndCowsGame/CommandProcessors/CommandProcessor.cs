@@ -1,4 +1,9 @@
 ﻿// <summary>Contains the abstract CommandProcessor class.</summary>
+//-----------------------------------------------------------------------
+// <copyright file="CommandProcessor.cs" company="Bulls-And-Cows-1">
+//     Everything is copyrighted.
+// </copyright>
+//-----------------------------------------------------------------------
 namespace BullsAndCows.CommandProcessors
 {
     using Contracts;

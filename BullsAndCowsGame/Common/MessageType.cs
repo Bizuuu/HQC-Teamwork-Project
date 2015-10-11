@@ -1,4 +1,9 @@
 ﻿// <summary>Contains the MessageType enumeration.</summary>
+//-----------------------------------------------------------------------
+// <copyright file="MessageType.cs" company="Bulls-And-Cows-1">
+//     Everything is copyrighted.
+// </copyright>
+//-----------------------------------------------------------------------
 namespace BullsAndCows.Common
 {
     /// <summary>

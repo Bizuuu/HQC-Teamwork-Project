@@ -1,4 +1,9 @@
 ﻿// <summary>Contains the IRandomNumberGenerator interface.</summary>
+//-----------------------------------------------------------------------
+// <copyright file="IRandomNumberProvider.cs" company="Bulls-And-Cows-1">
+//     Everything is copyrighted.
+// </copyright>
+//-----------------------------------------------------------------------
 namespace BullsAndCows.Contracts
 {
     /// <summary>

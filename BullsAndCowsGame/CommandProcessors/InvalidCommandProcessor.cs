@@ -1,4 +1,9 @@
 ﻿// <summary>Contains the InvalidCommandProcessor class.</summary>
+//-----------------------------------------------------------------------
+// <copyright file="InvalidCommandProcessor.cs" company="Bulls-And-Cows-1">
+//     Everything is copyrighted.
+// </copyright>
+//-----------------------------------------------------------------------
 namespace BullsAndCows.CommandProcessors
 {
     using System;

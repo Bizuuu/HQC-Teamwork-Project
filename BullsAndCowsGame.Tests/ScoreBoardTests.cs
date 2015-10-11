@@ -1,4 +1,9 @@
 ﻿// <summary>Contains the ScoreBoardTests class.</summary>
+//-----------------------------------------------------------------------
+// <copyright file="ScoreBoardTests.cs" company="Bulls-And-Cows-1">
+//     Everything is copyrighted.
+// </copyright>
+//-----------------------------------------------------------------------
 namespace BullsAndCows.Tests
 {
     using System.Collections.Generic;

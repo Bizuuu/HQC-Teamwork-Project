@@ -1,4 +1,9 @@
 ﻿// <summary>Contains the RandomNumberProvider class.</summary>
+//-----------------------------------------------------------------------
+// <copyright file="RandomNumberProvider.cs" company="Bulls-And-Cows-1">
+//     Everything is copyrighted.
+// </copyright>
+//-----------------------------------------------------------------------
 namespace BullsAndCows
 {
     using System;

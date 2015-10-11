@@ -1,4 +1,9 @@
 ﻿// <summary>Contains the PlayerScoreTests class.</summary>
+//-----------------------------------------------------------------------
+// <copyright file="PlayerScoreTests.cs" company="Bulls-And-Cows-1">
+//     Everything is copyrighted.
+// </copyright>
+//-----------------------------------------------------------------------
 namespace BullsAndCows.Tests
 {
     using System;

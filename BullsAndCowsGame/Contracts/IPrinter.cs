@@ -1,4 +1,9 @@
 ﻿// <summary>Contains the IPrinter interface.</summary>
+//-----------------------------------------------------------------------
+// <copyright file="IPrinter.cs" company="Bulls-And-Cows-1">
+//     Everything is copyrighted.
+// </copyright>
+//-----------------------------------------------------------------------
 namespace BullsAndCows.Contracts
 {
     using System.Collections.Generic;

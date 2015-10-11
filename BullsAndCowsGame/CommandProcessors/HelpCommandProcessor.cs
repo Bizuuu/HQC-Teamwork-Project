@@ -1,4 +1,9 @@
 ﻿// <summary>Contains the HelpCommandProcessor class.</summary>
+//-----------------------------------------------------------------------
+// <copyright file="HelpCommandProcessor.cs" company="Bulls-And-Cows-1">
+//     Everything is copyrighted.
+// </copyright>
+//-----------------------------------------------------------------------
 namespace BullsAndCows.CommandProcessors
 {
     using System;

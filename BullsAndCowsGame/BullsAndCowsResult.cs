@@ -1,4 +1,9 @@
 ﻿// <summary>Contains the BullsAndCowsResult class.</summary>
+//-----------------------------------------------------------------------
+// <copyright file="BullsAndCowsResult.cs" company="Bulls-And-Cows-1">
+//     Everything is copyrighted.
+// </copyright>
+//-----------------------------------------------------------------------
 namespace BullsAndCows
 {
     /// <summary>

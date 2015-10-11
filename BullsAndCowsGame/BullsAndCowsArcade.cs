@@ -1,4 +1,9 @@
 ﻿// <summary>Contains the BullsAndCowsArcade class.</summary>
+//-----------------------------------------------------------------------
+// <copyright file="BullsAndCowsArcade.cs" company="Bulls-And-Cows-1">
+//     Everything is copyrighted.
+// </copyright>
+//-----------------------------------------------------------------------
 namespace BullsAndCows
 {
     using CommandProcessors;

@@ -1,4 +1,9 @@
 ﻿// <summary>Contains the SimpleMessage class.</summary>
+//-----------------------------------------------------------------------
+// <copyright file="SimpleMessage.cs" company="Bulls-And-Cows-1">
+//     Everything is copyrighted.
+// </copyright>
+//-----------------------------------------------------------------------
 namespace BullsAndCows.Messages
 {
     using Contracts;

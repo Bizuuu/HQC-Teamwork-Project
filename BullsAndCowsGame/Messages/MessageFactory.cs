@@ -1,4 +1,9 @@
 ﻿// <summary>Contains the MessageFactory class.</summary>
+//-----------------------------------------------------------------------
+// <copyright file="MessageFactory.cs" company="Bulls-And-Cows-1">
+//     Everything is copyrighted.
+// </copyright>
+//-----------------------------------------------------------------------
 namespace BullsAndCows.Messages
 {
     using System;

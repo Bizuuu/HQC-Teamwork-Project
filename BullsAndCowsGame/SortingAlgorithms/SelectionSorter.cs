@@ -1,4 +1,9 @@
 ﻿// <summary>Contains the SelectionSorter class.</summary>
+//-----------------------------------------------------------------------
+// <copyright file="SelectionSorter.cs" company="Bulls-And-Cows-1">
+//     Everything is copyrighted.
+// </copyright>
+//-----------------------------------------------------------------------
 namespace BullsAndCows.SortingAlgorithms
 {
     using System;

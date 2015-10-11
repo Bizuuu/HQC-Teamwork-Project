@@ -1,4 +1,9 @@
 ﻿// <summary>Contains the abstract Message class.</summary>
+//-----------------------------------------------------------------------
+// <copyright file="Message.cs" company="Bulls-And-Cows-1">
+//     Everything is copyrighted.
+// </copyright>
+//-----------------------------------------------------------------------
 namespace BullsAndCows.Messages
 {
     using Contracts;

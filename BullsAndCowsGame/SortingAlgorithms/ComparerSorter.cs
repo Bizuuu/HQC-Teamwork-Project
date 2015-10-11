@@ -1,4 +1,9 @@
 ﻿// <summary>Contains the ComparerSorter class.</summary>
+//-----------------------------------------------------------------------
+// <copyright file="ComparerSorter.cs" company="Bulls-And-Cows-1">
+//     Everything is copyrighted.
+// </copyright>
+//-----------------------------------------------------------------------
 namespace BullsAndCows.SortingAlgorithms
 {
     using System;

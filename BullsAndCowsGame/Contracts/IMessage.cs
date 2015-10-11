@@ -1,4 +1,9 @@
 ﻿// <summary>Contains the IMessage interface.</summary>
+//-----------------------------------------------------------------------
+// <copyright file="IMessage.cs" company="Bulls-And-Cows-1">
+//     Everything is copyrighted.
+// </copyright>
+//-----------------------------------------------------------------------
 namespace BullsAndCows.Contracts
 {
     /// <summary>
