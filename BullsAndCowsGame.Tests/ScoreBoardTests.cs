@@ -4,6 +4,9 @@
     using BullsAndCows;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
 
+    /// <summary>
+    /// Contains all tests related to the ScoreBoard class.
+    /// </summary>
     [TestClass]
     public class ScoreBoardTests
     {
@@ -27,6 +30,9 @@
         // public void MyTestCleanup() { }
         #endregion
 
+        /// <summary>
+        /// Tests whether the ScoreBoard class correctly adds PlayerScores.
+        /// </summary>
         [TestMethod]
         public void TestMethod1()
         {
