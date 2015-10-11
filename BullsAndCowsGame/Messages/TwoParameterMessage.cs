@@ -13,7 +13,7 @@
 
         public int Parameter { get; private set; }
 
-        public object SecondParameter { get; private set; }
+        public int SecondParameter { get; private set; }
 
         public Message Message { get; private set; }
 
