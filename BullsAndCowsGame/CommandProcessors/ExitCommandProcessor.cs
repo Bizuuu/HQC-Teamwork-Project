@@ -15,6 +15,9 @@ namespace BullsAndCows.CommandProcessors
     /// </summary>
     internal class ExitCommandProcessor : CommandProcessor, ICommandProcessor
     {
+        private const string ExitCommand = "exit";
+        private const string NullExeptionText = "There is no successor for ExitCommandProcessor.";
+
         /// <summary>
         /// Decides whether it can process the command or passes it to the next Successor.
         /// </summary>
@@ -22,7 +25,7 @@ namespace BullsAndCows.CommandProcessors
         /// <param name="game">Used to access the printer.</param>
         public override void ProcessCommand(string command, BullsAndCowsGame game)
         {
-            if (command == "exit")
+            if (command == ExitCommand)
             {
                 game.Printer.PrintMessage(MessageType.Exit);
                 Environment.Exit(1);
@@ -33,7 +36,7 @@ namespace BullsAndCows.CommandProcessors
             }
             else
             {
-                throw new ArgumentNullException("There is no successor for ExitCommandProcessor.");
+                throw new ArgumentNullException(NullExeptionText);
             }
         }
     }

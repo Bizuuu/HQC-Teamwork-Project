@@ -15,6 +15,8 @@ namespace BullsAndCows.CommandProcessors
     /// </summary>
     internal class RestartCommandProcessor : CommandProcessor, ICommandProcessor
     {
+        private const string RestartCommand = "restart";
+        private const string NullExeptionText = "There is no successor for RestartCommandProcessor.";
         /// <summary>
         /// Disposes the game settings and starts a new game.
         /// </summary>
@@ -22,7 +24,7 @@ namespace BullsAndCows.CommandProcessors
         /// <param name="game">The game, whose methods Dispose and Play are used.</param>
         public override void ProcessCommand(string command, BullsAndCowsGame game)
         {
-            if (command == "restart")
+            if (command == RestartCommand )
             {
                 game.Dispose();
                 game.Play();
@@ -33,7 +35,7 @@ namespace BullsAndCows.CommandProcessors
             }
             else
             {
-                throw new ArgumentNullException("There is no successor for RestartCommandProcessor.");
+                throw new ArgumentNullException(NullExeptionText);
             }
         }
     }

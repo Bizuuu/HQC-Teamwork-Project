@@ -15,6 +15,9 @@ namespace BullsAndCows.CommandProcessors
     /// </summary>
     internal class TopCommandProcessor : CommandProcessor, ICommandProcessor
     {
+        private const string ScoreBoardPrint = "top";
+        private const string NullExeptionText = "There is no successor for TopCommandProcessor.";
+
         /// <summary>
         /// Tells the printer to print the scoreboard.
         /// </summary>
@@ -22,7 +25,7 @@ namespace BullsAndCows.CommandProcessors
         /// <param name="game">The game which is used to access the printer.</param>
         public override void ProcessCommand(string command, BullsAndCowsGame game)
         {
-            if (command == "top")
+            if (command == ScoreBoardPrint)
             {
                 game.Printer.PrintLeaderBoard(game.ScoreBoard.LeaderBoard);
             }
@@ -32,7 +35,7 @@ namespace BullsAndCows.CommandProcessors
             }
             else
             {
-                throw new ArgumentNullException("There is no successor for TopCommandProcessor.");
+                throw new ArgumentNullException(NullExeptionText);
             }
         }
     }

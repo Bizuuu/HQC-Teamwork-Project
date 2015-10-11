@@ -10,12 +10,21 @@ namespace BullsAndCows.Messages
     using System.Collections.Generic;
     using Common;
     using Contracts;
-    
+
     /// <summary>
     /// Printer class.
     /// </summary>
     public class Printer : IPrinter
     {
+        private const string ScoreBoardText = "Scoreboard:";
+        private const string FormatText = "  {0,7} | {1}";
+        private const string GuessesText = "  {0,7} | {1}";
+        private const string NameText = "Name";
+        private const string CurrentPositionFormatText = "{0}| {1}";
+        private const string EmptyScoreBoardText = "Scoreboard is empty!";
+        private const string NumberLooksLikeText = "The number looks like ";
+        private const string PointText = ".";
+        private const string DashText = "-";
         /// <summary>
         /// Initializes a new instance of the <see cref="Printer" /> class.
         /// </summary>
@@ -58,7 +67,7 @@ namespace BullsAndCows.Messages
         /// </summary>
         /// <param name="messageType">Message type.</param>
         /// <param name="parameter">Integer number.</param>
-        public void PrintMessage(MessageType messageType, int parameter) 
+        public void PrintMessage(MessageType messageType, int parameter)
         {
             var message = this.MessageFactory.MakeMessage(messageType, parameter);
             Console.WriteLine(message);
@@ -73,14 +82,14 @@ namespace BullsAndCows.Messages
             Console.WriteLine();
             if (leaderBoard.Count > 0)
             {
-                Console.WriteLine("Scoreboard:");
+                Console.WriteLine(ScoreBoardText);
                 int currentPosition = 1;
-                Console.WriteLine("  {0,7} | {1}", "Guesses", "Name");
+                Console.WriteLine(FormatText, GuessesText, NameText);
                 this.PrintDashedLine(40);
 
                 foreach (var currentPlayerInfo in leaderBoard)
                 {
-                    Console.WriteLine("{0}| {1}", currentPosition, currentPlayerInfo);
+                    Console.WriteLine(CurrentPositionFormatText, currentPosition, currentPlayerInfo);
                     this.PrintDashedLine(40);
                     currentPosition++;
                 }
@@ -89,7 +98,7 @@ namespace BullsAndCows.Messages
             }
             else
             {
-                Console.WriteLine("Scoreboard is empty!");
+                Console.WriteLine(EmptyScoreBoardText);
             }
         }
 
@@ -99,14 +108,14 @@ namespace BullsAndCows.Messages
         /// <param name="helpingNumber">Chars array.</param>
         public void PrintHelpingNumber(char[] helpingNumber)
         {
-            Console.Write("The number looks like ");
+            Console.Write(NumberLooksLikeText);
 
             foreach (char ch in helpingNumber)
             {
                 Console.Write(ch);
             }
 
-            Console.Write(".");
+            Console.Write(PointText);
             Console.WriteLine();
         }
 
@@ -137,7 +146,7 @@ namespace BullsAndCows.Messages
         {
             for (int i = 0; i < dashesForPrint; i++)
             {
-                Console.Write("-");
+                Console.Write(DashText);
             }
 
             Console.WriteLine();

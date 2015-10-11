@@ -15,6 +15,7 @@ namespace BullsAndCows
     /// </summary>
     public class BullsAndCowsGame : IDisposable
     {
+        private const char XChar = 'X';
         /// <summary>
         /// The helping number of the users using the "help" command.
         /// </summary>
@@ -132,7 +133,7 @@ namespace BullsAndCows
             this.GuessAttemptCounter = 0;
             this.CheatAttemptCounter = 0;
             this.IsGuessed = false;
-            this.helpingNumber = new char[] { 'X', 'X', 'X', 'X' };
+            this.helpingNumber = new char[] { XChar, XChar, XChar, XChar };
         }
 
         /// <summary>
@@ -141,12 +142,12 @@ namespace BullsAndCows
         public void RevealDigit()
         {
             bool reveald = false;
-            
+
             while (!reveald && this.CheatAttemptCounter < 4)
             {
                 int digitForReveal = this.RandomNumberProvider.GenerateNumber(0, 3);
 
-                if (this.helpingNumber[digitForReveal] == 'X')
+                if (this.helpingNumber[digitForReveal] == XChar)
                 {
                     this.helpingNumber[digitForReveal] =
                     this.NumberForGuess[digitForReveal];

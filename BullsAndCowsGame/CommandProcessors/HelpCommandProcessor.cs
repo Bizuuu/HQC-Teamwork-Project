@@ -15,6 +15,8 @@ namespace BullsAndCows.CommandProcessors
     /// </summary>
     internal class HelpCommandProcessor : CommandProcessor, ICommandProcessor
     {
+        private const string HelpCommand = "help";
+        private const string NullExeptionText = "There is no successor for HelpCommandProcessor.";
         /// <summary>
         /// Calls the RevealDigit method on the game or passes to the next Successor.
         /// </summary>
@@ -22,7 +24,7 @@ namespace BullsAndCows.CommandProcessors
         /// <param name="game">The game on which the RevealDigit method is called.</param>
         public override void ProcessCommand(string command, BullsAndCowsGame game)
         {
-            if (command == "help")
+            if (command == HelpCommand)
             {
                 game.RevealDigit();
                 game.CheatAttemptCounter++;
@@ -33,7 +35,7 @@ namespace BullsAndCows.CommandProcessors
             }
             else
             {
-                throw new ArgumentNullException("There is no successor for HelpCommandProcessor.");
+                throw new ArgumentNullException(NullExeptionText);
             }
         }
     }

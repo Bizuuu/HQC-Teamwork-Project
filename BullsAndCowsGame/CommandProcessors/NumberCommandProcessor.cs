@@ -15,6 +15,8 @@ namespace BullsAndCows.CommandProcessors
     /// </summary>
     internal class NumberCommandProcessor : CommandProcessor, ICommandProcessor
     {
+        private const string NullExeptionText = "There is no successor for NumberCommandProcessor.";
+
         /// <summary>
         /// Gets or sets the BullsAndCowsCounter responsible for calculating the score.
         /// </summary>
@@ -65,7 +67,7 @@ namespace BullsAndCows.CommandProcessors
             }
             else
             {
-                throw new ArgumentNullException("There is no successor for NumberCommandProcessor.");
+                throw new ArgumentNullException(NullExeptionText);
             }
         }
 
@@ -75,7 +77,7 @@ namespace BullsAndCows.CommandProcessors
         /// <param name="command">The number to be checked.</param>
         /// <param name="game">The game used to retrieve the NumberToGuess.</param>
         /// <returns>True or false whether the number is guessed.</returns>
-        private bool IsGuessedCorrectly(string command, BullsAndCowsGame game) 
+        private bool IsGuessedCorrectly(string command, BullsAndCowsGame game)
         {
             if (command == game.NumberForGuess)
             {

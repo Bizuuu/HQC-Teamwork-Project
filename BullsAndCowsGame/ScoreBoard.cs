@@ -22,6 +22,15 @@ namespace BullsAndCows
         /// </summary>
         public const string FilePath = "../../Common/scores.txt";
 
+        private const string MaxPlayerExeptionText = "MaxPlayers should be a number bigger than 0";
+
+        private const string ScoreWriterFormatText = "{0} {1}";
+
+        private const char SpaceChar = ' ';
+
+        private const string SpaceString = " ";
+
+
         /// <summary>
         /// List of scores.
         /// </summary>
@@ -63,7 +72,7 @@ namespace BullsAndCows
             {
                 if (value <= 0)
                 {
-                    throw new ArgumentOutOfRangeException("MaxPlayers should be a number bigger than 0");
+                    throw new ArgumentOutOfRangeException(MaxPlayerExeptionText);
                 }
 
                 this.maxPlayers = value;
@@ -97,7 +106,7 @@ namespace BullsAndCows
 
             using (scoresWriter)
             {
-                scoresWriter.WriteLine("{0} {1}", playerScore.NickName, playerScore.Guesses);
+                scoresWriter.WriteLine(ScoreWriterFormatText, playerScore.NickName, playerScore.Guesses);
             }
 
             this.leaderBoard.Add(playerScore);
@@ -117,7 +126,7 @@ namespace BullsAndCows
             {
                 while ((currLine = scoresReader.ReadLine()) != null)
                 {
-                    string[] data = currLine.Split(' ');
+                    string[] data = currLine.Split(SpaceChar);
                     string name = string.Empty;
                     int score;
 
@@ -136,7 +145,7 @@ namespace BullsAndCows
                             }
                             else
                             {
-                                name += data[i] + " ";
+                                name += data[i] + SpaceString;
                             }
                         }
 

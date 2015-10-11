@@ -13,6 +13,9 @@ namespace BullsAndCows
     /// </summary>
     public class PlayerScore : IComparable<PlayerScore>
     {
+        private readonly string ResultStringFormatText = "{0,3}    | {1}";
+
+        private const string NicknameNullExeptionText = "NickName should have at least 1 symbol!";
         /// <summary>
         /// Nick name.
         /// </summary>
@@ -43,7 +46,7 @@ namespace BullsAndCows
             {
                 if (string.IsNullOrWhiteSpace(value))
                 {
-                    throw new ArgumentNullException("NickName should have at least 1 symbol!");
+                    throw new ArgumentNullException(NicknameNullExeptionText);
                 }
 
                 this.nickName = value;
@@ -79,7 +82,7 @@ namespace BullsAndCows
         /// <returns>String value.</returns>
         public override string ToString()
         {
-            string result = string.Format("{0,3}    | {1}", this.Guesses, this.NickName);
+            string result = string.Format(ResultStringFormatText, this.Guesses, this.NickName);
             return result;
         }
     }
