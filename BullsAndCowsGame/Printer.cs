@@ -7,16 +7,29 @@
     
     public class Printer : IPrinter
     {
-        public Printer()
+        public Printer(MessageFactory messageFactory)
         {
-            this.MessageFactory = new MessageFactory();
+            this.MessageFactory = messageFactory;
         }
 
         public MessageFactory MessageFactory { get; private set; }
 
-        public void Print(MessageType messageType, int parameter = 0, int secondParameter = 0)
+        public void PrintMessage(MessageType messageType, int parameter = 0, int secondParameter = 0)
         {
-            Console.WriteLine(this.MessageFactory.MakeMessage(messageType, parameter, secondParameter));
+            var message = this.MessageFactory.MakeMessage(messageType, parameter, secondParameter);
+            Console.WriteLine(message);
+        }
+
+        public void PrintMessage(MessageType messageType)
+        {
+            var message = this.MessageFactory.MakeMessage(messageType);
+            Console.WriteLine(message);
+        }
+
+        public void PrintMessage(MessageType messageType, int parameter) 
+        {
+            var message = this.MessageFactory.MakeMessage(messageType, parameter);
+            Console.WriteLine(message);
         }
 
         public void PrintLeaderBoard(IList<PlayerScore> leaderBoard)
@@ -61,11 +74,11 @@
         {
             if (cheatAttemptCounter == 0)
             {
-                this.Print(MessageType.Congratulation, guessAttemptCounter);
+                this.PrintMessage(MessageType.Congratulation, guessAttemptCounter);
             }
             else
             {
-                this.Print(MessageType.CheatCongratulation, guessAttemptCounter, cheatAttemptCounter);
+                this.PrintMessage(MessageType.CheatCongratulation, guessAttemptCounter, cheatAttemptCounter);
             }
 
             Console.WriteLine();

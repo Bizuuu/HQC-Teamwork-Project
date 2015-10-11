@@ -1,5 +1,7 @@
 ﻿namespace BullsAndCows.CommandProcessors
 {
+    using Contracts;
+
     internal abstract class CommandProcessor : ICommandProcessor
     {
         protected ICommandProcessor Successor { get; set; }

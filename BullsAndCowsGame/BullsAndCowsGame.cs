@@ -2,74 +2,75 @@
 {
     using System;
     using BullsAndCows.Common;
+    using Contracts;
 
     public class BullsAndCowsGame
     {
         private const byte GuessNumberLength = 4;
         private const byte AllDigitsCount = 10;
-        private static int maxPlayersInScoreBoard = 5;
-        private static ScoreBoard scoreBoard = new ScoreBoard(maxPlayersInScoreBoard);
-        private static Printer printer = new Printer();
-        private static int cheatAttemptCounter;
-        private static int guessAttemptCounter;
-        private static string guessNumberToString;
-        private static bool isGuessed;
-        private static char[] helpingNumber;
-        private static Random randomGenerator;
-        private static string name;
+        private int cheatAttemptCounter;
+        private int guessAttemptCounter;
+        private string guessNumberAsString;
+        private bool isGuessed;
+        private char[] helpingNumber;
+        private string name;
 
-        public static void Play()
+        public BullsAndCowsGame(
+            IRandomNumberProvider randomNumberProvider,
+            ScoreBoard scoreboard,
+            IPrinter printer,
+            ICommandProcessor commandProcessor)
+        {
+            this.RandomNumberProvider = randomNumberProvider;
+            this.ScoreBoard = scoreboard;
+            this.Printer = printer;
+            this.CommandProcessor = commandProcessor;
+        }
+
+        public IRandomNumberProvider RandomNumberProvider { get; private set; }
+
+        public ScoreBoard ScoreBoard { get; private set; }
+
+        public IPrinter Printer { get; private set; }
+
+        public ICommandProcessor CommandProcessor { get; private set; }
+
+        public void Play()
         {
             if (name == null)
             {
-                printer.Print(MessageType.EnterName);
+                Printer.PrintMessage(MessageType.EnterName);
                 name = Console.ReadLine();
             }
 
-            printer.Print(MessageType.Welcome);
-            printer.Print(MessageType.GameRules);
-
-            Initialize();
-            GenerateNumberForGuess();
+            Printer.PrintMessage(MessageType.Welcome);
+            Printer.PrintMessage(MessageType.GameRules);
 
             string input;
 
             while (!isGuessed)
             {
-                printer.Print(MessageType.Command);
+                Printer.PrintMessage(MessageType.Command);
                 input = Console.ReadLine();
 
-                if (IsValidNumber(input))
-                {
-                    ProcessDigitCommand(input);
-                }
-                else
-                {
-                    ProcessTextCommand(input);
-                }
+                CommandProcessor.ProcessCommand(input);
             }
 
-            scoreBoard.AddPlayerScore(new PlayerScore(name, guessAttemptCounter));
-            printer.PrintLeaderBoard(scoreBoard.LeaderBoard);
+            ScoreBoard.AddPlayerScore(new PlayerScore(name, guessAttemptCounter));
+            Printer.PrintLeaderBoard(ScoreBoard.LeaderBoard);
             CreateNewGame();
         }
 
-        private static void Initialize()
+        public void Initialize()
         {
-            randomGenerator = new Random();
+            guessNumberAsString = RandomNumberProvider.GenerateNumber(1000, 9999).ToString();
             guessAttemptCounter = 0;
             cheatAttemptCounter = 0;
             isGuessed = false;
             helpingNumber = new char[] { 'X', 'X', 'X', 'X' };
         }
 
-        private static void GenerateNumberForGuess()
-        {
-            int guessNumber = randomGenerator.Next(1000, 10000);
-            guessNumberToString = guessNumber.ToString();
-        }
-
-        private static bool IsValidNumber(string input)
+        private bool IsValidNumber(string input)
         {
             if (input.Length != GuessNumberLength)
             {
@@ -87,15 +88,15 @@
             return true;
         }
 
-        private static void ProcessDigitCommand(string numberAsString)
+        private void ProcessDigitCommand(string numberAsString)
         {
             guessAttemptCounter++;
 
             if (IsEqualToNumberForGuess(numberAsString))
             {
                 isGuessed = true;
-                
-                printer.PrintCongratulationMessage(cheatAttemptCounter, guessAttemptCounter);
+
+                Printer.PrintCongratulationMessage(cheatAttemptCounter, guessAttemptCounter);
             }
             else
             {
@@ -103,19 +104,17 @@
             }
         }
 
-        private static void PrintBullsAndCows(string tryNumberString)
+        private void PrintBullsAndCows(string tryNumberString)
         {
             int bullsCount = 0;
             int cowsCount = 0;
-            var printer = new Printer();
 
             CountBullsAndCows(tryNumberString, ref bullsCount, ref cowsCount);
 
-
-            printer.Print(MessageType.WrongNumber, bullsCount, cowsCount);
+            Printer.PrintMessage(MessageType.WrongNumber, bullsCount, cowsCount);
         }
 
-        private static void CountBullsAndCows(string tryNumberString, ref int bullsCount, ref int cowsCount)
+        private void CountBullsAndCows(string tryNumberString, ref int bullsCount, ref int cowsCount)
         {
             bool[] bulls = new bool[GuessNumberLength];
             bool[] cows = new bool[AllDigitsCount];
@@ -123,7 +122,7 @@
             cowsCount = CountCows(tryNumberString, cowsCount, bulls, cows);
         }
 
-        private static int CountCows(string tryNumberString, int cowsCount, bool[] bulls, bool[] cows)
+        private int CountCows(string tryNumberString, int cowsCount, bool[] bulls, bool[] cows)
         {
             for (int i = 0; i < GuessNumberLength; i++)
             {
@@ -137,12 +136,12 @@
 
             return cowsCount;
         }
-        // implemented in BullsAndCowsCounter
-        private static int CountBulls(string tryNumberString, int bullsCount, bool[] bulls)
+
+        private int CountBulls(string tryNumberString, int bullsCount, bool[] bulls)
         {
             for (int i = 0; i < GuessNumberLength; i++)
             {
-                if (tryNumberString[i] == guessNumberToString[i])
+                if (tryNumberString[i] == guessNumberAsString[i])
                 {
                     bulls[i] = true;
                     bullsCount++;
@@ -152,11 +151,11 @@
             return bullsCount;
         }
 
-        private static int CountCowsForCurrentDigit(string tryNumberString, int cowsCount, bool[] bulls, int i)
+        private int CountCowsForCurrentDigit(string tryNumberString, int cowsCount, bool[] bulls, int i)
         {
             for (int j = 0; j < tryNumberString.Length; j++)
             {
-                if (tryNumberString[i] == guessNumberToString[j])
+                if (tryNumberString[i] == guessNumberAsString[j])
                 {
                     if (!bulls[j])
                     {
@@ -169,9 +168,9 @@
             return cowsCount;
         }
 
-        private static bool IsEqualToNumberForGuess(string tryNumber)
+        private bool IsEqualToNumberForGuess(string tryNumber)
         {
-            if (tryNumber == guessNumberToString)
+            if (tryNumber == guessNumberAsString)
             {
                 return true;
             }
@@ -179,12 +178,12 @@
             return false;
         }
 
-        private static void ProcessTextCommand(string command)
+        private void ProcessTextCommand(string command)
         {
             switch (command.ToLower())
             {
                 case "top":
-                    printer.PrintLeaderBoard(scoreBoard.LeaderBoard);
+                    Printer.PrintLeaderBoard(ScoreBoard.LeaderBoard);
                     break;
                 case "help":
                     RevealDigit();
@@ -194,38 +193,38 @@
                     CreateNewGame();
                     return;
                 case "exit":
-                    printer.Print(MessageType.Exit);
+                    Printer.PrintMessage(MessageType.Exit);
                     Environment.Exit(1);
                     break;
                 default:
-                    printer.Print(MessageType.InvalidCommand);
+                    Printer.PrintMessage(MessageType.InvalidCommand);
                     break;
             }
         }
 
-        private static void RevealDigit()
+        private void RevealDigit()
         {
             bool flag = false;
             int c = 0;
             while (!flag &&
-                   c != 2 * guessNumberToString.Length)
+                   c != 2 * guessNumberAsString.Length)
             {
-                int digitForReveal = randomGenerator.Next(0, 4);
+                int digitForReveal = RandomNumberProvider.GenerateNumber(0, 4);
 
                 if (helpingNumber[digitForReveal] == 'X')
                 {
                     helpingNumber[digitForReveal] =
-                    guessNumberToString[digitForReveal];
+                    guessNumberAsString[digitForReveal];
                     flag = true;
                 }
 
                 c++;
             }
 
-            printer.PrintHelpingNumber(helpingNumber);
+            Printer.PrintHelpingNumber(helpingNumber);
         }
 
-        private static void CreateNewGame()
+        private void CreateNewGame()
         {
             Play();
         }
