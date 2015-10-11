@@ -1,10 +1,4 @@
-﻿// <summary>Contains the AssemblyInfo.</summary>
-//-----------------------------------------------------------------------
-// <copyright file="AssemblyInfo.cs" company="Bulls-And-Cows-1">
-//     Everything is copyrighted.
-// </copyright>
-//-----------------------------------------------------------------------
-using System.Reflection;
+﻿using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 

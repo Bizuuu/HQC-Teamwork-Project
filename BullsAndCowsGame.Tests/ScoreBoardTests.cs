@@ -1,18 +1,10 @@
-﻿// <summary>Contains the ScoreBoardTests class.</summary>
-//-----------------------------------------------------------------------
-// <copyright file="ScoreBoardTests.cs" company="Bulls-And-Cows-1">
-//     Everything is copyrighted.
-// </copyright>
-//-----------------------------------------------------------------------
-namespace BullsAndCows.Tests
+﻿namespace BullsAndCowsGame.Tests
 {
+    using System;
     using System.Collections.Generic;
     using BullsAndCows;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-    /// <summary>
-    /// Contains all tests related to the ScoreBoard class.
-    /// </summary>
     [TestClass]
     public class ScoreBoardTests
     {
@@ -36,11 +28,8 @@ namespace BullsAndCows.Tests
         // public void MyTestCleanup() { }
         #endregion
 
-        /// <summary>
-        /// Tests whether the ScoreBoard class correctly adds PlayerScores.
-        /// </summary>
         [TestMethod]
-        public void TestMethod1()
+        public void ScoreBoardTest()
         {
             int maxPlayers = 5;
             var scoreBoard = new ScoreBoard(maxPlayers);
