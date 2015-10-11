@@ -1,4 +1,5 @@
-﻿namespace BullsAndCows
+﻿// <summary>Contains the RandomNumberProvider class.</summary>
+namespace BullsAndCows
 {
     using System;
     using Contracts;

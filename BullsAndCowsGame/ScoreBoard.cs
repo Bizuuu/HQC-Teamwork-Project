@@ -1,4 +1,5 @@
-﻿namespace BullsAndCows
+﻿// <summary>Contains the ScoreBoard class.</summary>
+namespace BullsAndCows
 {
     using System;
     using System.Collections.Generic;

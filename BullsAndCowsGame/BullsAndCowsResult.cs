@@ -1,4 +1,5 @@
-﻿namespace BullsAndCows
+﻿// <summary>Contains the BullsAndCowsResult class.</summary>
+namespace BullsAndCows
 {
     /// <summary>
     /// Bulls-cows results.

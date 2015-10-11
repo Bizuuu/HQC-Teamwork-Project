@@ -1,4 +1,5 @@
-﻿namespace BullsAndCows
+﻿// <summary>Contains the PlayerScore class.</summary>
+namespace BullsAndCows
 {
     using System;
 
