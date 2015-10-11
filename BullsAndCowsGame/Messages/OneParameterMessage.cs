@@ -4,8 +4,6 @@
 
     public class OneParameterMessage : Message,IMessage
     {
-        private Message message;
-
         public OneParameterMessage(Message message, int parameter)
         {
             this.Parameter = parameter;
