@@ -4,8 +4,16 @@
     using Common;
     using Contracts;
 
+    /// <summary>
+    /// Processes the "help" command.
+    /// </summary>
     internal class HelpCommandProcessor : CommandProcessor, ICommandProcessor
     {
+        /// <summary>
+        /// Calls the RevealDigit method on the game or passes to the next Successor.
+        /// </summary>
+        /// <param name="command">The command.</param>
+        /// <param name="game">The game on which the RevealDigit method is called.</param>
         public override void ProcessCommand(string command, BullsAndCowsGame game)
         {
             if (command == "help")

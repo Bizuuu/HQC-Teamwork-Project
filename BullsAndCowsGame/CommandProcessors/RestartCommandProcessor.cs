@@ -4,8 +4,16 @@
     using Common;
     using Contracts;
 
+    /// <summary>
+    /// Handles the restart command.
+    /// </summary>
     internal class RestartCommandProcessor : CommandProcessor, ICommandProcessor
     {
+        /// <summary>
+        /// Disposes the game settings and starts a new game.
+        /// </summary>
+        /// <param name="command">The command.</param>
+        /// <param name="game">The game, whose methods Dispose and Play are used.</param>
         public override void ProcessCommand(string command, BullsAndCowsGame game)
         {
             if (command == "restart")

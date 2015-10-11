@@ -4,17 +4,26 @@
     using Common;
     using Contracts;
 
+    /// <summary>
+    /// Used for handling a number command.
+    /// </summary>
     internal class NumberCommandProcessor : CommandProcessor, ICommandProcessor
     {
-        public NumberCommandProcessor()
-            : base()
-        {
-        }
-
+        /// <summary>
+        /// Gets or sets the BullsAndCowsCounter responsible for calculating the score.
+        /// </summary>
         private BullsAndCowsCounter BullsAndCowsCounter { get; set; }
 
+        /// <summary>
+        /// Gets or sets the BullsAndCowsResult which is responsible for holding the score of the current guess.
+        /// </summary>
         private BullsAndCowsResult BullsAndCowsResult { get; set; }
 
+        /// <summary>
+        /// Checks if the number is guessed correctly, if it's of valid length and calculates the results.
+        /// </summary>
+        /// <param name="command">The command.</param>
+        /// <param name="game">The game used to access the printer and other needed properties.</param>
         public override void ProcessCommand(string command, BullsAndCowsGame game)
         {
             if (BullsAndCowsCounter == null)
@@ -54,6 +63,12 @@
             }
         }
 
+        /// <summary>
+        /// Checks whether the number is guessed correctly.
+        /// </summary>
+        /// <param name="command">The number to be checked.</param>
+        /// <param name="game">The game used to retrieve the NumberToGuess.</param>
+        /// <returns>True or false whether the number is guessed.</returns>
         private bool IsGuessedCorrectly(string command, BullsAndCowsGame game) 
         {
             if (command == game.NumberForGuess)

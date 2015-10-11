@@ -4,8 +4,16 @@
     using Common;
     using Contracts;
 
+    /// <summary>
+    /// Class responsible for handling the "exit" command.
+    /// </summary>
     internal class ExitCommandProcessor : CommandProcessor, ICommandProcessor
     {
+        /// <summary>
+        /// Decides whether it can process the command or passes it to the next Successor.
+        /// </summary>
+        /// <param name="command">The command.</param>
+        /// <param name="game">Used to access the printer.</param>
         public override void ProcessCommand(string command, BullsAndCowsGame game)
         {
             if (command == "exit")
