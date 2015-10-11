@@ -1,18 +1,18 @@
 ﻿namespace BullsAndCows.CommandProcessors
 {
     using System;
-    using Contracts;
     using Common;
+    using Contracts;
 
     internal class NumberCommandProcessor : CommandProcessor, ICommandProcessor
     {
         public NumberCommandProcessor()
             : base()
         {
-
         }
 
         private BullsAndCowsCounter BullsAndCowsCounter { get; set; }
+
         private BullsAndCowsResult BullsAndCowsResult { get; set; }
 
         public override void ProcessCommand(string command, BullsAndCowsGame game)

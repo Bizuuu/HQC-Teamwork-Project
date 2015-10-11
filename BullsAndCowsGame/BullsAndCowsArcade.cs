@@ -6,11 +6,14 @@
     public class BullsAndCowsArcade
     {
         private const int MaxPlayersInScoreboard = 5;
-        public BullsAndCowsArcade() {}
+
+        public BullsAndCowsArcade()
+        {
+        }
 
         public void StartGame()
         {
-            Initialize();
+            this.Initialize();
         }
 
         private void Initialize()

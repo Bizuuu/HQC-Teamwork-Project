@@ -2,7 +2,7 @@
 {
     using BullsAndCows.Contracts;
 
-    public class SimpleMessage : Message,IMessage
+    public class SimpleMessage : Message, IMessage
     {
         public SimpleMessage(string text)
         {
@@ -11,7 +11,7 @@
 
         public override string Show()
         {
-           return this.Text;
+            return this.Text;
         }
     }
 }

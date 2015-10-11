@@ -6,7 +6,6 @@
 
     public class BullsAndCowsGame : IDisposable
     {
-       
         private int guessAttemptCounter;
         private bool isGuessed;
         private char[] helpingNumber;
@@ -38,37 +37,63 @@
 
         public void Play()
         {
-            if (playerName == null)
+            if (this.playerName == null)
             {
-                Printer.PrintMessage(MessageType.EnterName);
-                playerName = Console.ReadLine();
+                this.Printer.PrintMessage(MessageType.EnterName);
+                this.playerName = Console.ReadLine();
             }
 
-            Printer.PrintMessage(MessageType.Welcome);
-            Printer.PrintMessage(MessageType.GameRules);
+            this.Printer.PrintMessage(MessageType.Welcome);
+            this.Printer.PrintMessage(MessageType.GameRules);
 
             string input;
 
-            while (!isGuessed)
+            while (!this.isGuessed)
             {
-                Printer.PrintMessage(MessageType.Command);
+                this.Printer.PrintMessage(MessageType.Command);
                 input = Console.ReadLine();
 
-                CommandProcessor.ProcessCommand(input, this);
+                this.CommandProcessor.ProcessCommand(input, this);
             }
 
-            ScoreBoard.AddPlayerScore(new PlayerScore(playerName, guessAttemptCounter));
-            Printer.PrintLeaderBoard(ScoreBoard.LeaderBoard);
-        
+            ScoreBoard.AddPlayerScore(new PlayerScore(this.playerName, this.guessAttemptCounter));
+            this.Printer.PrintLeaderBoard(ScoreBoard.LeaderBoard);
         }
 
         public void Initialize()
         {
-            this.NumberForGuess = RandomNumberProvider.GenerateNumber(1000, 9999).ToString();
-            guessAttemptCounter = 0;
+            this.NumberForGuess = this.RandomNumberProvider.GenerateNumber(1000, 9999).ToString();
+            this.guessAttemptCounter = 0;
             this.CheatAttemptCounter = 0;
-            isGuessed = false;
-            helpingNumber = new char[] { 'X', 'X', 'X', 'X' };
+            this.isGuessed = false;
+            this.helpingNumber = new char[] { 'X', 'X', 'X', 'X' };
+        }
+
+        public void RevealDigit()
+        {
+            bool flag = false;
+            int c = 0;
+            while (!flag &&
+                   c != 2 * this.NumberForGuess.Length)
+            {
+                int digitForReveal = this.RandomNumberProvider.GenerateNumber(0, 4);
+
+                if (this.helpingNumber[digitForReveal] == 'X')
+                {
+                    this.helpingNumber[digitForReveal] =
+                    this.NumberForGuess[digitForReveal];
+                    flag = true;
+                }
+
+                c++;
+            }
+
+            this.Printer.PrintHelpingNumber(this.helpingNumber);
+        }
+
+        public void Dispose()
+        {
+            this.Initialize();
         }
 
         //private bool IsValidNumber(string input)
@@ -97,33 +122,6 @@
             }
 
             return false;
-        }
-
-        public void RevealDigit()
-        {
-            bool flag = false;
-            int c = 0;
-            while (!flag &&
-                   c != 2 * this.NumberForGuess.Length)
-            {
-                int digitForReveal = RandomNumberProvider.GenerateNumber(0, 4);
-
-                if (helpingNumber[digitForReveal] == 'X')
-                {
-                    helpingNumber[digitForReveal] =
-                    this.NumberForGuess[digitForReveal];
-                    flag = true;
-                }
-
-                c++;
-            }
-
-            Printer.PrintHelpingNumber(helpingNumber);
-        }
-
-        public void Dispose()
-        {
-            Initialize();
         }
     }
 }

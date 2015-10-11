@@ -1,7 +1,7 @@
-﻿using System;
-
-namespace BullsAndCows
+﻿namespace BullsAndCows
 {
+    using System;
+
     public class BullsAndCowsCounter : IDisposable
     {
         private const byte GuessNumberLength = 4;
@@ -18,6 +18,12 @@ namespace BullsAndCows
 
         private string NumberForGuess { get; set; }
 
+        public void Dispose()
+        {
+            this.areBulls = new bool[GuessNumberLength];
+            this.areCows = new bool[AllDigitsCount];
+        }
+
         public BullsAndCowsResult CountBullsAndCows(string suggestedNumber)
         {
             var bulls = this.CountBulls(suggestedNumber);
@@ -32,10 +38,11 @@ namespace BullsAndCows
             {
                 if (suggestedNumber[i] == this.NumberForGuess[i])
                 {
-                    areBulls[i] = true;
+                   this.areBulls[i] = true;
                     bullsCount++;
                 }
             }
+
             return bullsCount;
         }
 
@@ -45,14 +52,14 @@ namespace BullsAndCows
             for (int i = 0; i < GuessNumberLength; i++)
             {
                 int suggestedDigit = int.Parse(suggestedNumber[i].ToString());
-                if (!areBulls[i] && !areCows[suggestedDigit])
+                if (!this.areBulls[i] && !this.areCows[suggestedDigit])
                 {
-                    areCows[suggestedDigit] = true;
+                    this.areCows[suggestedDigit] = true;
                     for (int j = 0; j < suggestedNumber.Length; j++)
                     {
                         if (suggestedNumber[i] == this.NumberForGuess[j])
                         {
-                            if (!areBulls[j])
+                            if (!this.areBulls[j])
                             {
                                 cowsCount++;
                                 break;
@@ -63,12 +70,6 @@ namespace BullsAndCows
             }
 
             return cowsCount;
-        }
-
-        public void Dispose()
-        {
-            this.areBulls = new bool[GuessNumberLength];
-            this.areCows = new bool[AllDigitsCount];
         }
     }
 }

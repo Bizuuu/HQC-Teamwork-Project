@@ -1,6 +1,6 @@
 ﻿namespace BullsAndCows.Contracts
 {
-    interface IMessage
+    public interface IMessage
     {
         string Show();
     }

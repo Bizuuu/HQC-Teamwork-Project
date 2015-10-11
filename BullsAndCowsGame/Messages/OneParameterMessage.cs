@@ -2,7 +2,7 @@
 {
     using BullsAndCows.Contracts;
 
-    public class OneParameterMessage : Message,IMessage
+    public class OneParameterMessage : Message, IMessage
     {
         public OneParameterMessage(Message message, int parameter)
         {
