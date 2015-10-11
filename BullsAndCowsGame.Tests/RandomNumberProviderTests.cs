@@ -12,8 +12,8 @@
         public void RandomNumberProviderShouldReturnRandomNumberWhenGenerateNumberAsStringIsCalled()
         {
             IRandomNumberProvider randomProvider = RandomNumberProvider.Instance;
-            string firstNumber = randomProvider.GenerateNumberAsString();
-            string secondNumber = randomProvider.GenerateNumberAsString();
+            int firstNumber = randomProvider.GenerateNumber(1000, 9999);
+            int secondNumber = randomProvider.GenerateNumber(1000, 9999);
             Assert.AreNotEqual(firstNumber, secondNumber);
         }
 
@@ -21,7 +21,7 @@
         public void RandomNumberProviderShouldReturnFourDigitNumberWhenGenerateNumberAsStringIsCalled()
         {
             IRandomNumberProvider randomProvider = RandomNumberProvider.Instance;
-            string number = randomProvider.GenerateNumberAsString();
+            string number = randomProvider.GenerateNumber(1000, 9999).ToString();
             int actualNumberOfDigits = number.Length;
             int expectedNumberOfDigits = 4;
             Assert.AreEqual(actualNumberOfDigits, expectedNumberOfDigits);

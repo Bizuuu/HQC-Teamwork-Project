@@ -26,11 +26,10 @@
             }
         }
 
-        public string GenerateNumberAsString()
+        public int GenerateNumber(int from, int to)
         {
-            int numberToGuess = this.random.Next(1000, 10000);
-            string numberToGuessAsString = numberToGuess.ToString();
-            return numberToGuessAsString;
+            int numberToGuess = this.random.Next(from, to + 1);
+            return numberToGuess;
         }
     }
 }
