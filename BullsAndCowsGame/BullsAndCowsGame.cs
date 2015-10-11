@@ -5,8 +5,8 @@
     using Contracts;
 
     public class BullsAndCowsGame : IDisposable
-    {
-        private bool isGuessed;        private char[] helpingNumber;
+    {        
+        private char[] helpingNumber;
         private string playerName;
 
         public BullsAndCowsGame(
@@ -51,7 +51,6 @@
 
             string input;
 
-  
             while (!this.IsGuessed)
             {
                
@@ -121,7 +120,5 @@
 
         //    return true;
         //}
-
-
     }
 }
