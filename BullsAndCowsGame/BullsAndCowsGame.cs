@@ -77,11 +77,9 @@
         public void RevealDigit()
         {
             bool reveald = false;
-            this.CheatAttemptCounter++;
-
-            while (!reveald && this.CheatAttemptCounter <= 4)
+            
+            while (!reveald && this.CheatAttemptCounter < 4)
             {
-
                 int digitForReveal = this.RandomNumberProvider.GenerateNumber(0, 3);
 
                 if (this.helpingNumber[digitForReveal] == 'X')
@@ -99,23 +97,5 @@
         {
             this.Initialize();
         }
-
-        // private bool IsValidNumber(string input)
-        // {
-        //     if (input.Length != GuessNumberLength)
-        //     {
-        //         return false;
-        //     }
-
-        //     for (int i = 0; i < GuessNumberLength; i++)
-        //     {
-        //         if (!char.IsDigit(input[i]))
-        //         {
-        //             return false;
-        //         }
-        //     }
-
-        //     return true;
-        // }
     }
 }
