@@ -6,9 +6,6 @@
 
     public class BullsAndCowsGame : IDisposable
     {
-       
-        private int guessAttemptCounter;
-        private bool isGuessed;
         private char[] helpingNumber;
         private string playerName;
 
@@ -36,6 +33,10 @@
 
         public int CheatAttemptCounter { get; set; }
 
+        public int GuessAttemptCounter { get; private set; }
+
+        public bool IsGuessed { get; set; }
+
         public void Play()
         {
             if (playerName == null)
@@ -49,25 +50,26 @@
 
             string input;
 
-            while (!isGuessed)
+            while (!this.IsGuessed)
             {
                 Printer.PrintMessage(MessageType.Command);
                 input = Console.ReadLine();
-
+                this.GuessAttemptCounter++;
                 CommandProcessor.ProcessCommand(input, this);
             }
 
-            ScoreBoard.AddPlayerScore(new PlayerScore(playerName, guessAttemptCounter));
+            ScoreBoard.AddPlayerScore(new PlayerScore(playerName, this.GuessAttemptCounter));
             Printer.PrintLeaderBoard(ScoreBoard.LeaderBoard);
-        
+
+            Console.ReadLine();
         }
 
         public void Initialize()
         {
             this.NumberForGuess = RandomNumberProvider.GenerateNumber(1000, 9999).ToString();
-            guessAttemptCounter = 0;
+            this.GuessAttemptCounter = 0;
             this.CheatAttemptCounter = 0;
-            isGuessed = false;
+            this.IsGuessed = false;
             helpingNumber = new char[] { 'X', 'X', 'X', 'X' };
         }
 
@@ -88,16 +90,6 @@
 
         //    return true;
         //}
-
-        private bool IsEqualToNumberForGuess(string tryNumber)
-        {
-            if (tryNumber == this.NumberForGuess)
-            {
-                return true;
-            }
-
-            return false;
-        }
 
         public void RevealDigit()
         {
