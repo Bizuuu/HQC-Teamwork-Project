@@ -2,6 +2,7 @@
 {
     using CommandProcessors;
     using Contracts;
+    using Messages;
 
     public class BullsAndCowsArcade
     {

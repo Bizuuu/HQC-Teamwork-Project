@@ -59,13 +59,13 @@
     <Compile Include="BullsAndCowsGame.cs" />
     <Compile Include="BullsAndCowsTest.cs" />
     <Compile Include="BullsAndCowsCounter.cs" />
-    <Compile Include="MessageFactory.cs" />
+    <Compile Include="Messages\MessageFactory.cs" />
     <Compile Include="Messages\Message.cs" />
     <Compile Include="Messages\OneParameterMessage.cs" />
     <Compile Include="Messages\SimpleMessage.cs" />
     <Compile Include="Messages\TwoParameterMessage.cs" />
     <Compile Include="PlayerScore.cs" />
-    <Compile Include="Printer.cs" />
+    <Compile Include="Messages\Printer.cs" />
     <Compile Include="RandomNumberProvider.cs" />
     <Compile Include="ScoreBoard.cs" />
     <Compile Include="SortingAlgorithms\ComparerSorter.cs" />

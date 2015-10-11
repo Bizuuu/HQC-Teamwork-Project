@@ -1,9 +1,9 @@
-﻿namespace BullsAndCows
+﻿namespace BullsAndCows.Messages
 {
     using System;
     using System.Collections.Generic;
-    using BullsAndCows.Common;
-    using BullsAndCows.Contracts;
+    using Common;
+    using Contracts;
     
     public class Printer : IPrinter
     {

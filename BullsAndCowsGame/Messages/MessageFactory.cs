@@ -1,4 +1,4 @@
-﻿namespace BullsAndCows
+﻿namespace BullsAndCows.Messages
 {
     using System;
     using BullsAndCows.Common;
