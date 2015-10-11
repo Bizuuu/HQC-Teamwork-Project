@@ -106,15 +106,15 @@ namespace BullsAndCows
             this.Printer.PrintMessage(MessageType.Welcome);
             this.Printer.PrintMessage(MessageType.GameRules);
 
-            string input;
+            string inputCommand;
 
             while (!this.IsGuessed)
             {
                 this.Printer.PrintMessage(MessageType.Command);
-                input = Console.ReadLine();
+                inputCommand = Console.ReadLine();
                 this.GuessAttemptCounter++;
 
-                this.CommandProcessor.ProcessCommand(input, this);
+                this.CommandProcessor.ProcessCommand(inputCommand, this);
             }
 
             ScoreBoard.AddPlayerScore(new PlayerScore(this.playerName, this.GuessAttemptCounter));

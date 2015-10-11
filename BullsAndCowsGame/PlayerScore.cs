@@ -39,17 +39,14 @@ namespace BullsAndCows
             {
                 return this.nickName;
             }
-
             set
             {
                 if (string.IsNullOrWhiteSpace(value))
                 {
                     throw new ArgumentNullException("NickName should have at least 1 symbol!");
                 }
-                else
-                {
-                    this.nickName = value;
-                }
+
+                this.nickName = value;
             }
         }
 
