@@ -47,6 +47,7 @@
     <Compile Include="CommandProcessors\CommandProcessor.cs" />
     <Compile Include="CommandProcessors\ExitCommandProcessor.cs" />
     <Compile Include="CommandProcessors\HelpCommandProcessor.cs" />
+    <Compile Include="CommandProcessors\InvalidCommandProcessor.cs" />
     <Compile Include="CommandProcessors\NumberCommandProcessor.cs" />
     <Compile Include="CommandProcessors\RestartCommandProcessor.cs" />
     <Compile Include="CommandProcessors\TopCommandProcessor.cs" />
