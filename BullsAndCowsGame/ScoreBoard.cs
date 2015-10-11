@@ -6,14 +6,35 @@
     using System.Linq;
     using SortingAlgorithms;
 
+    /// <summary>
+    /// Score board class.
+    /// </summary>
     public class ScoreBoard
     {
+        /// <summary>
+        /// File path.
+        /// </summary>
         public const string FilePath = "../../Common/scores.txt";
 
+        /// <summary>
+        /// List of scores.
+        /// </summary>
         private List<PlayerScore> leaderBoard;
+
+        /// <summary>
+        /// Integer Number.
+        /// </summary>
         private int maxPlayers;
+
+        /// <summary>
+        /// Sorter interface.
+        /// </summary>
         private ISorter sorter;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ScoreBoard" /> class.
+        /// </summary>
+        /// <param name="maxPlayers">Integer number.</param>
         public ScoreBoard(int maxPlayers)
         {
             this.sorter = new ComparerSorter();
@@ -21,6 +42,10 @@
             this.MaxPlayers = maxPlayers;
         }
 
+        /// <summary>
+        /// Gets or sets maximum players.
+        /// </summary>
+        /// <value>Integer number.</value>
         public int MaxPlayers
         {
             get
@@ -40,6 +65,11 @@
         }
 
         // Use this only when trying to access leaderBoard from outside this class
+
+        /// <summary>
+        /// Gets IList of scores.
+        /// </summary>
+        /// <value>Scores List.</value>
         public IList<PlayerScore> LeaderBoard
         {
             get
@@ -51,6 +81,10 @@
             }
         }
 
+        /// <summary>
+        /// Adds player score.
+        /// </summary>
+        /// <param name="playerScore">Player score.</param>
         public void AddPlayerScore(PlayerScore playerScore)
         {
             StreamWriter scoresWriter = new StreamWriter(FilePath, true);
@@ -63,6 +97,10 @@
             this.leaderBoard.Add(playerScore);
         }
 
+        /// <summary>
+        /// Reads score.        
+        /// </summary>
+        /// <returns>List of scores.</returns>
         private List<PlayerScore> ReadScores()
         {
             StreamReader scoresReader = new StreamReader(FilePath);

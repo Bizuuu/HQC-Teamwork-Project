@@ -5,33 +5,63 @@
     using Common;
     using Contracts;
     
+    /// <summary>
+    /// Printer class.
+    /// </summary>
     public class Printer : IPrinter
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Printer" /> class.
+        /// </summary>
+        /// <param name="messageFactory">MessageFactory instance.</param>
         public Printer(MessageFactory messageFactory)
         {
             this.MessageFactory = messageFactory;
         }
 
+        /// <summary>
+        /// Gets a factory.
+        /// </summary>
+        /// <value>A MessageFactory.</value>
         public MessageFactory MessageFactory { get; private set; }
 
+        /// <summary>
+        /// Prints the message with parameters.
+        /// </summary>
+        /// <param name="messageType">Message type.</param>
+        /// <param name="parameter">Integer Number.</param>
+        /// <param name="secondParameter">INTERGER NUMBER.</param>
         public void PrintMessage(MessageType messageType, int parameter = 0, int secondParameter = 0)
         {
             var message = this.MessageFactory.MakeMessage(messageType, parameter, secondParameter);
             Console.WriteLine(message);
         }
 
+        /// <summary>
+        /// Prints the message without parameters.
+        /// </summary>
+        /// <param name="messageType">Type of message.</param>
         public void PrintMessage(MessageType messageType)
         {
             var message = this.MessageFactory.MakeMessage(messageType);
             Console.WriteLine(message);
         }
 
+        /// <summary>
+        /// Prints the message with parameters.
+        /// </summary>
+        /// <param name="messageType">Message type.</param>
+        /// <param name="parameter">Integer number.</param>
         public void PrintMessage(MessageType messageType, int parameter) 
         {
             var message = this.MessageFactory.MakeMessage(messageType, parameter);
             Console.WriteLine(message);
         }
 
+        /// <summary>
+        /// Prints Leaderboard.
+        /// </summary>
+        /// <param name="leaderBoard">IList of player score.</param>
         public void PrintLeaderBoard(IList<PlayerScore> leaderBoard)
         {
             Console.WriteLine();
@@ -57,6 +87,10 @@
             }
         }
 
+        /// <summary>
+        /// Printing helping numbers.
+        /// </summary>
+        /// <param name="helpingNumber">Chars array.</param>
         public void PrintHelpingNumber(char[] helpingNumber)
         {
             Console.Write("The number looks like ");
@@ -70,6 +104,11 @@
             Console.WriteLine();
         }
 
+        /// <summary>
+        /// Congratulation Message is printed.
+        /// </summary>
+        /// <param name="cheatAttemptCounter">Integer number.</param>
+        /// <param name="guessAttemptCounter">Second Integer number.</param>
         public void PrintCongratulationMessage(int cheatAttemptCounter, int guessAttemptCounter)
         {
             if (cheatAttemptCounter == 0)
@@ -84,6 +123,10 @@
             Console.WriteLine();
         }
 
+        /// <summary>
+        /// Dash printing.
+        /// </summary>
+        /// <param name="dashesForPrint">Number of Dashes.</param>
         private void PrintDashedLine(int dashesForPrint)
         {
             for (int i = 0; i < dashesForPrint; i++)

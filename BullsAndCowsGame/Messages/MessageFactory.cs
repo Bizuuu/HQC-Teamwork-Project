@@ -3,8 +3,18 @@
     using System;
     using Common;
 
+    /// <summary>
+    /// Message factory class.
+    /// </summary>
     public class MessageFactory
     {
+        /// <summary>
+        /// Produces Message.
+        /// </summary>
+        /// <param name="message">Message type.</param>
+        /// <param name="parameter">Integer number.</param>
+        /// <param name="secondParameter">Second Number.</param>
+        /// <returns>Returns new message.</returns>
         public string MakeMessage(MessageType message, int parameter = 0, int secondParameter = 0)
         {
             switch (message)
