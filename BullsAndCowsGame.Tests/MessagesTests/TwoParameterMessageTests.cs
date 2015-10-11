@@ -1,17 +1,23 @@
-﻿using System;
-using System.Text;
-using System.Collections.Generic;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using BullsAndCows.Messages;
-
+﻿// <summary>Contains the tests for TwoParameterMessage class.</summary>
+//-----------------------------------------------------------------------
+// <copyright file="TwoParameterMessageTests.cs" company="Bulls-And-Cows-1">
+//     Everything is copyrighted.
+// </copyright>
+//-----------------------------------------------------------------------
 namespace BullsAndCowsGame.Tests.MessagesTests
 {
+    using BullsAndCows.Messages;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    
     /// <summary>
     /// This class contains all test methods for TwoParametersMessage.
     /// </summary>
     [TestClass]
     public class TwoParameterMessageTests
     {
+        /// <summary>
+        /// Tests whether the two parameter message returns a properly formatted string.
+        /// </summary>
         [TestMethod]
         public void TestMethod1()
         {

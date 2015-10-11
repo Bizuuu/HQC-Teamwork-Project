@@ -1,7 +1,7 @@
-﻿/// <summary>Contains the PlayerScoreTests class.</summary>  
-/// <copyright file="PlayerScoreTests.cs" company="Bulls-And-Cows-1">  
-///     Everything is copyrighted.  
-/// </copyright>  
+﻿// <summary>Contains the PlayerScoreTests class.</summary>  
+// <copyright file="PlayerScoreTests.cs" company="Bulls-And-Cows-1">  
+//     Everything is copyrighted.  
+// </copyright>  
 namespace BullsAndCowsGame.Tests
 {
     using System;
@@ -34,6 +34,9 @@ namespace BullsAndCowsGame.Tests
             PlayerScore playerScore = new PlayerScore(string.Empty, 3);
         }
 
+        /// <summary>
+        /// Tests whether the player score throws excepted when initialized with whitespace.
+        /// </summary>
         [TestMethod]
         [ExpectedException(typeof(ArgumentNullException))]
         public void PlayerScoreShouldThrowArgumentExceptionWhenInitializedWithWhitespaceForName()
@@ -56,6 +59,9 @@ namespace BullsAndCowsGame.Tests
             Assert.AreEqual(expected, actual, "CompareTo doesn't return correct integer when comparing two PlayerScores");
         }
 
+        /// <summary>
+        /// Tests whether CompareTo returns correct value when compared with PlayerScore with the same guesses.
+        /// </summary>
         [TestMethod]
         public void CompareToShouldReturnCorrectNumberWhenComparingPlayerScoresWithEqualGuesses()
         {
@@ -68,6 +74,9 @@ namespace BullsAndCowsGame.Tests
             Assert.AreEqual(expected, actual, "CompareTo doesn't return correct integer when comparing two PlayerScores with equal guesses");
         }
 
+        /// <summary>
+        /// Tests whether ToString returns a correctly formatted message.
+        /// </summary>
         [TestMethod]
         public void ToStringShouldReturnCorrectFormatMessage()
         {

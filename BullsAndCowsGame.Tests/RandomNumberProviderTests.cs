@@ -1,7 +1,7 @@
-﻿/// <summary>Contains the RandomNumberProviderTests class.</summary>  
-/// <copyright file="RandomNumberProviderTests.cs" company="Bulls-And-Cows-1">  
-///     Everything is copyrighted.  
-/// </copyright>  
+﻿// <summary>Contains the RandomNumberProviderTests class.</summary>  
+// <copyright file="RandomNumberProviderTests.cs" company="Bulls-And-Cows-1">  
+//     Everything is copyrighted.  
+// </copyright>  
 namespace BullsAndCowsGame.Tests
 {
     using System;

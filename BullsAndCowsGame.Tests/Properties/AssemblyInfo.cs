@@ -1,4 +1,10 @@
-﻿using System.Reflection;
+﻿// <summary>Contains the assembly info for the unit tests.</summary>
+//-----------------------------------------------------------------------
+// <copyright file="AssemblyInfo.cs" company="Bulls-And-Cows-1">
+//     Everything is copyrighted.
+// </copyright>
+//-----------------------------------------------------------------------
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 

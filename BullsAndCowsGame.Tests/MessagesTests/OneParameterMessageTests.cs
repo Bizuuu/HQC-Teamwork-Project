@@ -1,15 +1,24 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using BullsAndCows.Messages;
-
+﻿// <summary>Contains the tests for OneParameterMessage class.</summary>
+//-----------------------------------------------------------------------
+// <copyright file="OneParameterMessageTests.cs" company="Bulls-And-Cows-1">
+//     Everything is copyrighted.
+// </copyright>
+//-----------------------------------------------------------------------
 namespace BullsAndCowsGame.Tests.MessagesTests
 {
+    using System;
+    using BullsAndCows.Messages;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+
     /// <summary>
-    /// Summary description for OneParameterMessage
+    /// Contains the tests for OneParameterMessage.
     /// </summary>
     [TestClass]
     public class OneParameterMessageTests
     {
+        /// <summary>
+        /// Tests whether the OneParameterMessage shows the correct text.
+        /// </summary>
         [TestMethod]
         public void OneParameterMessageShouldShowCorrectText()
         {

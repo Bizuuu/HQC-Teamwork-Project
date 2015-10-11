@@ -1,18 +1,23 @@
-﻿using System;
-using System.Text;
-using System.Collections.Generic;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using BullsAndCows.SortingAlgorithms;
-using BullsAndCows;
-
+﻿// <summary>Contains the SortingAlgorithmsTests class.</summary>  
+// <copyright file="SortingAlgorithmsTests.cs" company="Bulls-And-Cows-1">  
+//     Everything is copyrighted.  
+// </copyright>  
 namespace BullsAndCowsGame.Tests
 {
+    using System.Collections.Generic;
+    using BullsAndCows;
+    using BullsAndCows.SortingAlgorithms;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+
     /// <summary>
-    /// Sorting Algorthims tests.
+    /// Sorting Algorithms tests.
     /// </summary>
     [TestClass]
     public class SortingAlgorithmsTests
     {
+        /// <summary>
+        /// Tests whether the selection sort algorithm works correctly.
+        /// </summary>
         [TestMethod]
         public void SelectionSortingAlgorithmShouldSortListProperly()
         {
@@ -36,10 +41,13 @@ namespace BullsAndCowsGame.Tests
             expectedScoreBoard.Add(new PlayerScore("Pesho4", 4));
             expectedScoreBoard.Add(new PlayerScore("Pesho5", 5));
 
-            //Assert.AreEqual(sortedScoreBoard[i].Guesses, expectedScoreBoard[i].Guesses);
+            // Assert.AreEqual(sortedScoreBoard[i].Guesses, expectedScoreBoard[i].Guesses);
             CollectionAssert.Equals(sortedScoreBoard, expectedScoreBoard);
         }
 
+        /// <summary>
+        /// Tests whether the built in comparer sort sorts the PlayerScores correctly.
+        /// </summary>
         [TestMethod]
         public void SortingUsingBuiltInPlayerScoreComparerShouldSortListProperly()
         {

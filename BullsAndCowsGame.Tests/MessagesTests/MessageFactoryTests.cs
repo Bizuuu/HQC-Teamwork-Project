@@ -1,14 +1,18 @@
-﻿using System;
-using System.Text;
-using System.Collections.Generic;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using BullsAndCows.Messages;
-using BullsAndCows.Common;
-
+﻿// <summary>Contains the tests for MessageFactory class.</summary>
+//-----------------------------------------------------------------------
+// <copyright file="MessageFactoryTests.cs" company="Bulls-And-Cows-1">
+//     Everything is copyrighted.
+// </copyright>
+//-----------------------------------------------------------------------
 namespace BullsAndCowsGame.Tests.MessagesTests
 {
+    using System;
+    using BullsAndCows.Common;
+    using BullsAndCows.Messages;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+
     /// <summary>
-    /// This class containts all tests for MessageFactory class
+    /// This class contains all tests for MessageFactory class.
     /// </summary>
     [TestClass]
     public class MessageFactoryTests

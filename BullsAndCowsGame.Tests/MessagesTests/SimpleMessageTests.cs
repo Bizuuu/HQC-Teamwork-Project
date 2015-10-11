@@ -1,17 +1,23 @@
-﻿using System;
-using System.Text;
-using System.Collections.Generic;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using BullsAndCows.Messages;
-
+﻿// <summary>Contains the tests for SimpleMessage class.</summary>
+//-----------------------------------------------------------------------
+// <copyright file="SimpleMessageTests.cs" company="Bulls-And-Cows-1">
+//     Everything is copyrighted.
+// </copyright>
+//-----------------------------------------------------------------------
 namespace BullsAndCowsGame.Tests.MessagesTests
 {
+    using BullsAndCows.Messages;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+
     /// <summary>
-    /// This class containts tests for SimpleMessage.
+    /// This class contains tests for SimpleMessage.
     /// </summary>
     [TestClass]
     public class SimpleMessageTests
     {
+        /// <summary>
+        /// Tests whether the simple message returns a correct string.
+        /// </summary>
         [TestMethod]
         public void SimpleMessageShowShouldReturnCorrectString()
         {
