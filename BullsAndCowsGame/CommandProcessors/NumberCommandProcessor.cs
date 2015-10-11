@@ -26,6 +26,12 @@
 
             if (int.TryParse(command, out commandAsNumber))
             {
+                if (command.Length != game.NumberForGuess.Length)
+                {
+                    game.Printer.PrintMessage(MessageType.InvalidNumberLength);
+                    return;
+                }
+
                 if (!this.IsGuessedCorrectly(command, game))
                 {
                     BullsAndCowsCounter.Dispose();
