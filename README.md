@@ -94,13 +94,13 @@
 ### Other Improvements
 1. Introduced constants
     - Examples
-        ~~~c#
+        ```
         private const byte GuessNumberLength = 4;
         private const byte AllDigitsCount = 10;
-        ~~~
-        ~~~c#
+        ```
+        ```
         public const string FilePath = "../../Common/scores.txt";
-        ~~~
+        ```
 
 ### Design Pattern Implementations
 1. Singleton:
