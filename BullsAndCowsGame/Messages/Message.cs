@@ -8,12 +8,13 @@
     public abstract class Message : IMessage
     {
         /// <summary>
-        /// Gets string.
+        /// Gets or sets string.
         /// </summary>
+        /// <value>String value.</value>
         protected string Text { get; set; }
 
         /// <summary>
-        /// Shows Message
+        /// Shows Message.
         /// </summary>
         /// <returns>String value.</returns>
         public abstract string Show();

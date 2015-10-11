@@ -5,15 +5,54 @@
     /// </summary>
     public enum MessageType
     {
+        /// <summary>
+        /// Welcome message.
+        /// </summary>
         Welcome,
+
+        /// <summary>
+        /// Game rules.
+        /// </summary>
         GameRules,
+
+        /// <summary>
+        /// Command message.
+        /// </summary>
         Command,
+
+        /// <summary>
+        /// Wrong number.
+        /// </summary>
         WrongNumber,
+
+        /// <summary>
+        /// Congratulation message.
+        /// </summary>
         Congratulation,
+
+        /// <summary>
+        /// Congratulation with cheats message.
+        /// </summary>
         CheatCongratulation,
+
+        /// <summary>
+        /// Enter name.
+        /// </summary>
         EnterName,
+
+        /// <summary>
+        /// Exit message.
+        /// </summary>
         Exit,
+
+        /// <summary>
+        /// Invalid command.
+        /// </summary>
         InvalidCommand,
+
+        /// <summary>
+        /// Invalid number length.
+        /// </summary>
         InvalidNumberLength
     }
 }
