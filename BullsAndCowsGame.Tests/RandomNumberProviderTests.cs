@@ -1,13 +1,23 @@
-﻿namespace BullsAndCowsGame.Tests
+﻿/// <summary>Contains the RandomNumberProviderTests class.</summary>  
+/// <copyright file="RandomNumberProviderTests.cs" company="Bulls-And-Cows-1">  
+///     Everything is copyrighted.  
+/// </copyright>  
+namespace BullsAndCowsGame.Tests
 {
     using System;
     using BullsAndCows;
     using BullsAndCows.Contracts;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
 
+    /// <summary>
+    /// Contains all the tests related to the RandomNumberProvider. 
+    /// </summary>
     [TestClass]
     public class RandomNumberProviderTests
     {
+        /// <summary>
+        /// Tests whether the generated numbers are different. 
+        /// </summary>
         [TestMethod]
         public void RandomNumberProviderShouldReturnRandomNumberWhenGenerateNumberAsStringIsCalled()
         {
@@ -17,6 +27,9 @@
             Assert.AreNotEqual(firstNumber, secondNumber);
         }
 
+        /// <summary>
+        /// Tests whether the number generated is a four digit number.
+        /// </summary>
         [TestMethod]
         public void RandomNumberProviderShouldReturnFourDigitNumberWhenGenerateNumberAsStringIsCalled()
         {

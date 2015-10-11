@@ -1,12 +1,22 @@
-﻿namespace BullsAndCowsGame.Tests
+﻿/// <summary>Contains the PlayerScoreTests class.</summary>  
+/// <copyright file="PlayerScoreTests.cs" company="Bulls-And-Cows-1">  
+///     Everything is copyrighted.  
+/// </copyright>  
+namespace BullsAndCowsGame.Tests
 {
     using System;
     using BullsAndCows;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
 
+    /// <summary>  
+    /// This class contains all tests related to the PlayerScore class.  
+    /// </summary>  
     [TestClass]
     public class PlayerScoreTests
     {
+        /// <summary>  
+        /// Tests whether PlayerScore throws exception when a null is given for name.  
+        /// </summary>
         [TestMethod]
         [ExpectedException(typeof(ArgumentNullException))]
         public void PlayerScoreShouldThrowArgumentExceptionWhenInitializedWithNullStringForName()
@@ -14,6 +24,9 @@
             PlayerScore playerScore = new PlayerScore(null, 3);
         }
 
+        /// <summary>  
+        /// Tests whether PlayerScore throws exception when an empty string is given for name.  
+        /// </summary>  
         [TestMethod]
         [ExpectedException(typeof(ArgumentNullException))]
         public void PlayerScoreShouldThrowArgumentExceptionWhenInitializedWithEmptyStringForName()
@@ -28,6 +41,9 @@
             PlayerScore playerScore = new PlayerScore("  ", 3);
         }
 
+        /// <summary>
+        /// Tests whether PlayerScore throws exception when a whitespace is given for name. 
+        /// </summary>
         [TestMethod]
         public void CompareToShouldReturnCorrectNumber()
         {

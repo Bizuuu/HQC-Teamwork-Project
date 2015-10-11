@@ -7,7 +7,7 @@ using BullsAndCows;
 namespace BullsAndCowsGame.Tests
 {
     /// <summary>
-    /// Tests for BullsAndCowsCounter class
+    /// Tests for BullsAndCowsCounter class.
     /// </summary>
     [TestClass]
     public class BullsAndCowsCounterTests
