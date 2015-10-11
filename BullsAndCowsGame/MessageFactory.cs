@@ -28,6 +28,8 @@
                     return new SimpleMessage("Good bye!").Show();
                 case MessageType.InvalidCommand:
                     return new SimpleMessage("Invalid command!").Show();
+                case MessageType.InvalidNumberLength:
+                    return new SimpleMessage("Number is too long or too short - must be 4 digits!").Show();
                 default:
                     throw new ArgumentNullException("No message type.");
             }

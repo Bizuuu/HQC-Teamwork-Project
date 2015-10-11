@@ -10,6 +10,7 @@
         CheatCongratulation,
         EnterName,
         Exit,
-        InvalidCommand
+        InvalidCommand,
+        InvalidNumberLength
     }
 }
