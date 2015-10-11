@@ -10,7 +10,6 @@
         private const byte AllDigitsCount = 10;
         private int cheatAttemptCounter;
         private int guessAttemptCounter;
-        private string guessNumberAsString;
         private bool isGuessed;
         private char[] helpingNumber;
         private string name;
@@ -35,6 +34,8 @@
 
         public ICommandProcessor CommandProcessor { get; private set; }
 
+        public string NumberForGuess { get; private set; }
+
         public void Play()
         {
             if (name == null)
@@ -53,7 +54,7 @@
                 Printer.PrintMessage(MessageType.Command);
                 input = Console.ReadLine();
 
-                CommandProcessor.ProcessCommand(input);
+                CommandProcessor.ProcessCommand(input, this);
             }
 
             ScoreBoard.AddPlayerScore(new PlayerScore(name, guessAttemptCounter));
@@ -63,7 +64,7 @@
 
         public void Initialize()
         {
-            guessNumberAsString = RandomNumberProvider.GenerateNumber(1000, 9999).ToString();
+            this.NumberForGuess = RandomNumberProvider.GenerateNumber(1000, 9999).ToString();
             guessAttemptCounter = 0;
             cheatAttemptCounter = 0;
             isGuessed = false;
@@ -141,7 +142,7 @@
         {
             for (int i = 0; i < GuessNumberLength; i++)
             {
-                if (tryNumberString[i] == guessNumberAsString[i])
+                if (tryNumberString[i] == this.NumberForGuess[i])
                 {
                     bulls[i] = true;
                     bullsCount++;
@@ -155,7 +156,7 @@
         {
             for (int j = 0; j < tryNumberString.Length; j++)
             {
-                if (tryNumberString[i] == guessNumberAsString[j])
+                if (tryNumberString[i] == this.NumberForGuess[j])
                 {
                     if (!bulls[j])
                     {
@@ -170,7 +171,7 @@
 
         private bool IsEqualToNumberForGuess(string tryNumber)
         {
-            if (tryNumber == guessNumberAsString)
+            if (tryNumber == this.NumberForGuess)
             {
                 return true;
             }
@@ -207,14 +208,14 @@
             bool flag = false;
             int c = 0;
             while (!flag &&
-                   c != 2 * guessNumberAsString.Length)
+                   c != 2 * this.NumberForGuess.Length)
             {
                 int digitForReveal = RandomNumberProvider.GenerateNumber(0, 4);
 
                 if (helpingNumber[digitForReveal] == 'X')
                 {
                     helpingNumber[digitForReveal] =
-                    guessNumberAsString[digitForReveal];
+                    this.NumberForGuess[digitForReveal];
                     flag = true;
                 }
 

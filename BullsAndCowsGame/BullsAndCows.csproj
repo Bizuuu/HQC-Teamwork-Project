@@ -57,7 +57,7 @@
     <Compile Include="Contracts\IRandomNumberProvider.cs" />
     <Compile Include="BullsAndCowsGame.cs" />
     <Compile Include="BullsAndCowsTest.cs" />
-    <Compile Include="CowsAndBullsCounter.cs" />
+    <Compile Include="BullsAndCowsCounter.cs" />
     <Compile Include="MessageFactory.cs" />
     <Compile Include="Messages\Message.cs" />
     <Compile Include="Messages\OneParameterMessage.cs" />
