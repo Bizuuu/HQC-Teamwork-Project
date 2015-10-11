@@ -1,6 +1,6 @@
-﻿namespace BullsAndCows.CommandProcessors
+﻿namespace BullsAndCows.Contracts
 {
-    internal interface ICommandProcessor
+    public interface ICommandProcessor
     {
         void SetSuccessor(ICommandProcessor successor);
 

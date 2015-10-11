@@ -1,6 +1,7 @@
 ﻿namespace BullsAndCows.CommandProcessors
 {
     using System;
+    using Contracts;
 
     internal class ExitCommandProcessor : CommandProcessor, ICommandProcessor
     {
