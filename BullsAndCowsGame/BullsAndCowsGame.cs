@@ -6,9 +6,7 @@
 
     public class BullsAndCowsGame : IDisposable
     {
-        private int guessAttemptCounter;
-        private bool isGuessed;
-        private char[] helpingNumber;
+        private bool isGuessed;        private char[] helpingNumber;
         private string playerName;
 
         public BullsAndCowsGame(
@@ -35,8 +33,13 @@
 
         public int CheatAttemptCounter { get; set; }
 
+        public int GuessAttemptCounter { get; private set; }
+
+        public bool IsGuessed { get; set; }
+
         public void Play()
         {
+
             if (this.playerName == null)
             {
                 this.Printer.PrintMessage(MessageType.EnterName);
@@ -48,24 +51,29 @@
 
             string input;
 
-            while (!this.isGuessed)
+  
+            while (!this.IsGuessed)
             {
+               
                 this.Printer.PrintMessage(MessageType.Command);
                 input = Console.ReadLine();
-
+                this.GuessAttemptCounter++;
+               
                 this.CommandProcessor.ProcessCommand(input, this);
             }
 
-            ScoreBoard.AddPlayerScore(new PlayerScore(this.playerName, this.guessAttemptCounter));
+            ScoreBoard.AddPlayerScore(new PlayerScore(this.playerName, this.GuessAttemptCounter));
             this.Printer.PrintLeaderBoard(ScoreBoard.LeaderBoard);
+
+            Console.ReadLine();
         }
 
         public void Initialize()
         {
             this.NumberForGuess = this.RandomNumberProvider.GenerateNumber(1000, 9999).ToString();
-            this.guessAttemptCounter = 0;
+            this.GuessAttemptCounter = 0;
             this.CheatAttemptCounter = 0;
-            this.isGuessed = false;
+            this.IsGuessed = false;
             this.helpingNumber = new char[] { 'X', 'X', 'X', 'X' };
         }
 
@@ -114,14 +122,6 @@
         //    return true;
         //}
 
-        private bool IsEqualToNumberForGuess(string tryNumber)
-        {
-            if (tryNumber == this.NumberForGuess)
-            {
-                return true;
-            }
 
-            return false;
-        }
     }
 }
