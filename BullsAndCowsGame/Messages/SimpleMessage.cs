@@ -8,7 +8,7 @@
     public class SimpleMessage : Message, IMessage
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="SimpleMessage.cs" /> class.
+        /// Initializes a new instance of the <see cref="SimpleMessage" /> class.
         /// </summary>
         /// <param name="text">String value.</param>
         public SimpleMessage(string text)
