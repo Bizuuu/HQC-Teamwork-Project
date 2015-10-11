@@ -26,8 +26,6 @@ namespace BullsAndCowsGame.Tests
             actualScoreBoard.Add(new PlayerScore("Pesho4", 4));
             actualScoreBoard.Add(new PlayerScore("Pesho2", 2));
 
-            int i = 3;
-
             var sortedScoreBoard = selectionSorter.Sort(actualScoreBoard);
 
             var expectedScoreBoard = new List<PlayerScore>();
