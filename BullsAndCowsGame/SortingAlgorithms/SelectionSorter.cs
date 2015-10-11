@@ -3,8 +3,16 @@
     using System;
     using System.Collections.Generic;
 
+    /// <summary>
+    /// Sorting strategy using the selection sort algorithm.
+    /// </summary>
     public class SelectionSorter : ISorter
     {
+        /// <summary>
+        /// Sorts the leaderboard using selection sort.
+        /// </summary>
+        /// <param name="leaderBoard">The leaderboard which is going to be sorted.</param>
+        /// <returns>Returns the sorted leaderboard.</returns>
         public List<PlayerScore> Sort(List<PlayerScore> leaderBoard)
         {
             int minPosition;
